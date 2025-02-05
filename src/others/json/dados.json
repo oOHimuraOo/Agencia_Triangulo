@@ -1,0 +1,1040 @@
+{
+  "anomaly": {
+    "Whisper": {
+      "Habilidade 1": {
+        "Nome": "Say Again?",
+        "Texto": "You may respond to a spoken sentence with the phrase “Say again?” and then you may tell the group what the target says instead of what they said initially. Roll Presence.",
+        "Qualidade": "Presence",
+        "Sucesso": "On a success, the target believes that the new sentence is what they meant.",
+        "Triforce": "On six or more 3s, you may speak for the target at any time in the next hour.",
+        "Falha": "On a failure, the target is unaffected, and for the next 3 hours you can only speak using the words in the sentence you intended for them.",
+        "Pergunta": "When someone interrupts me, I give them...",
+        "Resposta A": "The benefit of the doubt.",
+        "numeracao A": "T2",
+        "Resposta B": "A piece of my mind.",
+        "numeracao B": "P4"
+      },
+      "Habilidade 2": {
+        "Nome": "Tip of the Tongue",
+        "Texto": "Open your mind to the thoughts of someone nearby. Let their words reach your voice and roll Empathy.",
+        "Qualidade": "Empathy",
+        "Sucesso": "On a success, you say what the target wishes they were saying right now.",
+        "Triforce": "On every third 3, you may ask a question about something currently relevant to the target and receive an answer from the GM. The question and answer must be spoken out loud by your character.",
+        "Falha": "On a failure, you admit something you don’t want anyone to know.",
+        "Pergunta": "When I need to fit in somewhere, I...",
+        "Resposta A": "Jump in and act like I belong.",
+        "numeracao A": "A11",
+        "Resposta B": "Gradually infiltrate after a long period of careful reconnaissance.",
+        "numeracao B": "B9"
+      },
+      "Habilidade 3": {
+        "Nome": "Silence",
+        "Texto": "Open your mouth and emit a sound that adjusts frequency to cancel out the noises you make. Roll Subtlety.",
+        "Qualidade": "Subtlety",
+        "Sucesso": "On a success, none of your actions make a sound until after you make another roll or close your mouth.",
+        "Triforce": "For each additional 3, you can silence the actions of one additional target until this effect ends.",
+        "Falha": "On a failure, your frequency becomes imbalanced and you greatly amplify all sounds you make for the next hour.",
+        "Pergunta": "I go quiet...",
+        "Resposta A": "So others can speak.",
+        "numeracao A": "S10",
+        "Resposta B": "So my next words hit harder.",
+        "numeracao B": "S8"
+      }
+    },
+    "Catalogue": {
+      "Habilidade 1": {
+        "Nome": "What's That Over There?",
+        "Texto": "Point somewhere nearby and say “what’s that over there?” Roll Attentiveness.",
+        "Qualidade": "Attentiveness",
+        "Sucesso": "On a success, you create an object where you're pointing. It can be any mundane thing you imagine that fits comfortably and harmlessly inside the space, but can only feature details or information you would know.",
+        "Triforce": "For each additional 3, you may add another object nearby.",
+        "Falha": "On a failure, the GM will describe a different object that is now there, and it is either obviously out of place or extremely inconvenient.",
+        "Pergunta": "My friends would never hurt me, because...",
+        "Resposta A": "They don't know how.",
+        "numeracao A": "Y1",
+        "Resposta B": "I hired them.",
+        "numeracao B": "I5"
+      },
+      "Habilidade 2": {
+        "Nome": "You Might Also Like...",
+        "Texto": "Hold any object small enough to carry and roll Dynamism.",
+        "Qualidade": "Dynamism",
+        "Sucesso": "On a success, the object changes to a similar–but different–version of the object. (A green coat becomes a blue coat, a stuffed bear becomes a stuffed tiger, room key #203 becomes #204, etc.)",
+        "Triforce": "On every third 3, you may give the object an additional variant you can freely swap it between, such as giving a cane an alternate self as a sword. This effect is permanent but it can only swap when you are handling the object.",
+        "Falha": "On a failure, the object is replaced with something entirely different. It can no longer be changed by this ability.",
+        "Pergunta": "To me, the customer is always...",
+        "Resposta A": "Wrong.",
+        "numeracao A": "L2",
+        "Resposta B": "Right.",
+        "numeracao B": "J1"
+      },
+      "Habilidade 3": {
+        "Nome": "Your Best Self",
+        "Texto": "Open a container large enough to fit you entirely inside. Roll Duplicity.",
+        "Qualidade": "Duplicity",
+        "Sucesso": "On a success, an alternate version of you is inside. They have one particular skill that is useful to your current situation (whittling, whistling, whisking, etc). They disappear from your world within the hour.",
+        "Triforce": "On a success, an alternate version of you is inside. They have one particular skill that is useful to your current situation (whittling, whistling, whisking, etc). They disappear from your world within the hour.",
+        "Falha": "On a failure, the alternate version you reveal is evil from your perspective. They have goals and priorities opposite yours and are committed to getting in your way until dealt with. They leave your world voluntarily only when satisfied by the changes they made to it.",
+        "Pergunta": "The enemy of my enemy is...",
+        "Resposta A": "My friend.",
+        "numeracao A": "Y5",
+        "Resposta B": "Me.",
+        "numeracao B": "P5"
+      }
+    },
+    "Drain": {
+      "Habilidade 1": {
+        "Nome": "Would You Like Some More?",
+        "Texto": "To you, desire is a bucket. Poke a hole in it by saying 'Would you like some more?' and roll Empathy.",
+        "Qualidade": "Empathy",
+        "Sucesso": "On a success, the person you are speaking to becomes very interested in more of the last thing they enjoyed (attention, affection, ice cream, rest, etc.) as identified by you and the player of the character. This does not create an addiction or a compulsion, but makes that thing, if it’s available, into leverage or distraction far beyond its worth.",
+        "Triforce": "For each additional 3, you may spread their desire to one other nearby target to similar effect.",
+        "Falha": "On a failure, the target develops a loathing for the last thing they enjoyed. Your suggestion of more is insulting to them, and even thinking about that thing is revolting to them from now on.",
+        "Pergunta": "I can lead a horse to water...",
+        "Resposta A": "But who drinks water?",
+        "numeracao A": "Y4",
+        "Resposta B": "But I'm drinking first.",
+        "numeracao B": "C1"
+      },
+      "Habilidade 2": {
+        "Nome": "Borrow",
+        "Texto": "You may choose a feature of a mundane target and take it for yourself. Their face, their voice, their love, their fingerprints—now you have it, and they do not. Roll Duplicity.",
+        "Qualidade": "Duplicity",
+        "Sucesso": "On a success, this effect lasts for up to one hour.",
+        "Triforce": "For each additional 3, choose one: The target keeps a flawed version of what’s borrowed. The target keeps a flawed version of what’s borrowed. The target keeps a flawed version of what’s borrowed.",
+        "Falha": "On a failure, the target loses what you’ve taken permanently, and no one gets it. They remember what they have lost.",
+        "Pergunta": "People love me because...",
+        "Resposta A": "If they don't, I find new people.",
+        "numeracao A": "R9",
+        "Resposta B": "I make sure I'm flawless.",
+        "numeracao B": "S15"
+      },
+      "Habilidade 3": {
+        "Nome": "Universal Recipient",
+        "Texto": "When you receive Harm or are hurt in any way, you may roll Persistence.",
+        "Qualidade": "Persistence",
+        "Sucesso": "On a success, select a nearby living person or Anomaly other than what hurt you. They are hurt instead, and you are unhurt.",
+        "Triforce": "For each additional 3, you may choose an additional target who receives that same hurt.",
+        "Falha": "On a failure, your pain cycles back on itself, and you are dealt that hurt triply. If there would be Harm remaining after your death, it finds additional nearby targets until it is all dealt.",
+        "Pergunta": "When someone hurts me...",
+        "Resposta A": "It's a chance for a valuable lesson.",
+        "numeracao A": "S19",
+        "Resposta B": "They should not have done that. Why did they do that?",
+        "numeracao B": "B11"
+      }
+    },
+    "Timepiece": {
+      "Habilidade 1": {
+        "Nome": "We've Got Time.",
+        "Texto": "When you or a target are in a hurry to complete a task (fix a car, escape a pursuer, etc.) check any clock and say the phrase “We’ve got time.” Roll Professionalism.",
+        "Qualidade": "Professionalism",
+        "Sucesso": "On a success, you’re right. If the task is focused on and approached genuinely, it will be completed before the impending deadline.",
+        "Triforce": "For each additional 3, you gain an additional minute of preparation before the deadline hits for other activities.",
+        "Falha": "On a failure, you are catastrophically, terribly wrong — and you don’t know until it’s too late. Your pursuer takes you by surprise, the deadline has already passed...where did all the time go?",
+        "Pergunta": "I know...",
+        "Resposta A": "The deep magic.",
+        "numeracao A": "W3",
+        "Resposta B": "Kung-fu.",
+        "numeracao B": "C10"
+      },
+      "Habilidade 2": {
+        "Nome": "Overclock",
+        "Texto": "When you or an ally rolls for an Anomaly ability other than this one, after seeing the result, punch a clock and roll Initiative.",
+        "Qualidade": "Initiative",
+        "Sucesso": "On a success, you send the target back in time to assist themselves, allowing them to use the same ability a second time with an identical number of 3s. This second use can affect new targets and does not generate Chaos or Triscendence effects.",
+        "Triforce": "For each additional 3, you add one 3 to the second use. This effect can make a roll exceed six 3s.",
+        "Falha": "On a failure, the original roll becomes a failure, and then the ability fails a second time. The second failure repeats on the same target or moves to a new target, whichever is worse. Chaos is not generated by the copied failure.",
+        "Pergunta": "I'll sleep when...",
+        "Resposta A": "I'm tired.",
+        "numeracao A": "P13",
+        "Resposta B": "I'm tired.",
+        "numeracao B": "O7"
+      },
+      "Habilidade 3": {
+        "Nome": "Remember When",
+        "Texto": "Make someone feel an overwhelming rush of nostalgia for the time they let slip away. Hum a tune and roll Empathy.",
+        "Qualidade": "Empathy",
+        "Sucesso": "On a success, all past events, even recent ones, feel wistfully far away. The target is desperate to talk about their past and easily led toward subjects you’re interested in—even typically secret or classified ones.",
+        "Triforce": "On every third 3, you may request a particular memory or sequence be described in perfect detail—the GM will paint the entire scene, and it will not suffer the natural decay of memory. This effect can reveal information behind even Anomalous memory blockages or wipes.",
+        "Falha": "On a failure, the target becomes lost in their memories. They are overcome with emotion, and are useless for gathering information. Returning to the present will take time and care. Their condition generates at least one Loose End.",
+        "Pergunta": "I'm more likely to ask...",
+        "Resposta A": "Where are they now?",
+        "numeracao A": "O6",
+        "Resposta B": "Where are they going?",
+        "numeracao B": "F3"
+      }
+    },
+    "Growth": {
+      "Habilidade 1": {
+        "Nome": "I'll Cover You!",
+        "Texto": "When a nearby target would be hurt by an external force, you may say 'I’ll cover you!' and extend your flesh to protect them. Roll Persistence.",
+        "Qualidade": "Persistence",
+        "Sucesso": "On a success, you grow rapidly around them and take the attack for them. Any hurt, Harm, or death is dealt to you instead of them.",
+        "Triforce": "On every third 3, you armor yourself in extra layers of protective flesh. This instance of Harm is reduced by one, and any extra is applied to future Harm. (Higher numbers will create an obvious change in your physical body until it’s lost to absorb the harm.)",
+        "Falha": "On a failure, you and the target both take the original harm. Your body grows beyond your intent and remains overgrown in an obvious way until you have at least an hour to rest and recuperate.",
+        "Pergunta": "I protect people because...",
+        "Resposta A": "I want them to know who's tougher.",
+        "numeracao A": "F5",
+        "Resposta B": "They cannot protect themselves.",
+        "numeracao B": "L6"
+      },
+      "Habilidade 2": {
+        "Nome": "Limbs",
+        "Texto": "Expand your physical possibility with additional limbs similar to the ones you already possess. Roll Dynamism.",
+        "Qualidade": "Dynamism",
+        "Sucesso": "On a success, you gain reach and control far beyond typical combatants, and can easily engage any mundane or Minor Anomaly target into a stalemate.",
+        "Triforce": "For each additional 3, choose one: Disarm a target. Engage one more target. Engage one more target. Kill an unconscious target.",
+        "Falha": "On a failure, you become only limbs. All other features disappear and you become a conscious pile of whatever limbs you were hoping to create. You are extremely awkward and vulnerable to Harm for an hour.",
+        "Pergunta": "When I run into a wall, I...",
+        "Resposta A": "Eat the wall.",
+        "numeracao A": "S13",
+        "Resposta B": "Step over the wall.",
+        "numeracao B": "G9"
+      },
+      "Habilidade 3": {
+        "Nome": "Eyes",
+        "Texto": "Open a few more eyes. Roll Professionalism.",
+        "Qualidade": "Professionalism",
+        "Sucesso": "On a success, you sprout new eyes on your body, with potent new abilities.",
+        "Triforce": "Spend 3s on the following types of vision, which last for 1 hour: 1: Heat, Night, or Telescopic 2: Fingerprint or X-Ray 3: Reality (Cuts through illusions and obfuscations) 4: Plant Sign Language, Anomaly Tracking 6: Weakness 7: Future Sight",
+        "Falha": "On a failure, you see A Vision of the End. You receive a piece of forbidden knowledge about the end of all things, too big for your mind to comprehend. You suffer from an additional Burnout on all rolls until the end of the mission.",
+        "Pergunta": "Have you seen a Vision of the End?",
+        "Resposta A": "No. Also, I like plants!",
+        "numeracao A": "G6",
+        "Resposta B": "Yes.",
+        "numeracao B": "R7"
+      }
+    },
+    "Gun": {
+      "Habilidade 1": {
+        "Nome": "Eliminate",
+        "Texto": "You can remove a mundane object or person from the equation permanently. Once, they existed. Now they do not. Aim your Gun and roll Dynamism.",
+        "Qualidade": "Dynamism",
+        "Sucesso": "On a success, the target disappears without a trace.",
+        "Triforce": "On six or more 3s, choose any number of targets you can see from where you’re standing. They disappear without a trace.",
+        "Falha": "On a failure, the target is killed. An object is destroyed, a living creature dies. This fact is visible, obvious, and potentially horrifying.",
+        "Pergunta": "Will you remember them all?",
+        "Resposta A": "No.",
+        "numeracao A": "S6",
+        "Resposta B": "Yes.",
+        "numeracao B": "T5"
+      },
+      "Habilidade 2": {
+        "Nome": "Quick Draw",
+        "Texto": "When something tries to hurt you, fire your Gun and roll Initiative.",
+        "Qualidade": "Initiative",
+        "Sucesso": "On a success, you shot first. The aggressor takes one Harm before their attack and they do not succeed at hurting you.",
+        "Triforce": "For each additional 3, you may choose an additional target to Harm or Eliminate a target you’ve already Harmed with this ability.",
+        "Falha": "On a failure, you misfire. Something or someone important to you is damaged, and the original attack against you proceeds as planned.",
+        "Pergunta": "I shoot...",
+        "Resposta A": "Carefully.",
+        "numeracao A": "G4",
+        "Resposta B": "Immediately.",
+        "numeracao B": "A12"
+      },
+      "Habilidade 3": {
+        "Nome": "Open Carry",
+        "Texto": "The threat of your Gun is so great that even the mundane can sense it. Make your options clear and roll Presence.",
+        "Qualidade": "Presence",
+        "Sucesso": "On a success, a target you are focusing on is intimidated enough to do what you want. However, the GM chooses one consequence from the following. The target will: Remember your face Contact the authorities React with extreme fear Seek retribution",
+        "Triforce": "For each additional 3, you may either remove an option from the possible consequences or add an additional target. For example, six 3s could mean no consequences and 2 targets, or 5 targets and all potential consequences.",
+        "Falha": "On a failure, the target is unafraid. They become immune to all effects of your Gun, and will likely retaliate in immediate and dangerous ways.",
+        "Pergunta": "Friends are...",
+        "Resposta A": "Everywhere, if you know how to look.",
+        "numeracao A": "D6",
+        "Resposta B": "Enemies I haven't made yet.",
+        "numeracao B": "W11"
+      }
+    },
+    "Dream": {
+      "Habilidade 1": {
+        "Nome": "Nightmare",
+        "Texto": "Project yourself into something larger-than-life. Pick a mind and wrap its shadow around yourself. Roll Presence.",
+        "Qualidade": "Presence",
+        "Sucesso": "On a success, you may adopt an illusory form and appear as that form to your target. The form can be terrifying, beautiful, or mundane—and they believe it’s your true form.",
+        "Triforce": "On every third 3, you may ask the player controlling the target to tell you one of the following before you take this form: Their worst fear Their greatest goal ",
+        "Falha": "On a failure, your true identity is emblazoned onto their mind—by night they will dream about you, by day they will think about you. For today, though, maybe nothing will happen.",
+        "Pergunta": "I tend to imagine...",
+        "Resposta A": "The best case scenario.",
+        "numeracao A": "D1",
+        "Resposta B": "The worst possible outcome.",
+        "numeracao B": "R13"
+      },
+      "Habilidade 2": {
+        "Nome": "Naptime",
+        "Texto": "Blow a pinch of sand onto a target and roll Subtlety.",
+        "Qualidade": "Subtlety",
+        "Sucesso": "On a success, you send the target into a sudden sleep. They’ll have pleasant dreams and think they nodded off on their own after they wake up in a few minutes.",
+        "Triforce": "For each additional 3, choose one: For each additional 3, choose one:Add an additional target to this effect. The effect lasts an additional hour.",
+        "Falha": "On a failure, another target, an ally or perhaps even yourself, falls asleep instead. The fickle sand swirls in obvious ways, and the original target sees what you’ve done.",
+        "Pergunta": "My favorite dreams...",
+        "Resposta A": "Recur.",
+        "numeracao A": "D8",
+        "Resposta B": "Are completely unexpected.",
+        "numeracao B": "S1"
+      },
+      "Habilidade 3": {
+        "Nome": "Site Visit",
+        "Texto": "Imagination is real enough. Step into a painting, photograph, video, novel, or other piece of art and roll Attentiveness.",
+        "Qualidade": "Attentiveness",
+        "Sucesso": "On a success, you and any nearby allies you choose enter the world depicted. While inside you may manipulate objects, converse with people, and see from perspectives not featured in the original frame.",
+        "Triforce": "On every third 3, choose one: You and your allies change appearances to fit in with the art. When you leave, this piece of art is returned to its original condition.",
+        "Falha": "On a failure, you forget how to hide your tracks. Opportunistic characters from nearby art can follow you and enter Reality on their own.",
+        "Pergunta": "When I finish a story, I often wish I could...",
+        "Resposta A": "Spend more time with the characters.",
+        "numeracao A": "P8",
+        "Resposta B": "Share the lesson with someone who needs it.",
+        "numeracao B": "M4"
+      }
+    },
+    "Manifold": {
+      "Habilidade 1": {
+        "Nome": "I Know a Shortcut!",
+        "Texto": "When you want to get somewhere in a hurry, say the phrase 'I know a shortcut!' and then describe a short path to the discussed location. Roll Initiative.",
+        "Qualidade": "Initiative",
+        "Sucesso": "On a success, your directions are correct, no matter how impossible, for yourself. This shortcut disappears once it has been used.",
+        "Triforce": "For each additional 3, an additional person may use your shortcut before it disappears.",
+        "Falha": "On a failure, your shortcut leads somewhere very inconvenient instead of the desired location, and it is persistent and visible to everyone on both ends.",
+        "Pergunta": "The world is...",
+        "Resposta A": "As I see it.",
+        "numeracao A": "F9",
+        "Resposta B": "As I make it.",
+        "numeracao B": "S16"
+      },
+      "Habilidade 2": {
+        "Nome": "Just Keep Walking...",
+        "Texto": "When you give someone directions, are fleeing from a pursuer, or know where someone is going, you may attempt to trap them in a maze or endless hallway. Tie a knot and roll Persistence.",
+        "Qualidade": "Persistence",
+        "Sucesso": "On a success, you trap them in a complex, repeating path of your own design. They cannot exit until you make another roll.",
+        "Triforce": "For each additional 3, you may trap an additional target or make the maze last for additional rolls past the first.",
+        "Falha": "On a failure, you speed them immediately along to their destination—they reach their target, or catch you, immediately.",
+        "Pergunta": "I spend time with people...",
+        "Resposta A": "I want to understand.",
+        "numeracao A": "A5",
+        "Resposta B": "Who are already like me.",
+        "numeracao B": "M9"
+      },
+      "Habilidade 3": {
+        "Nome": "Gyre the Gimbal",
+        "Texto": "Adjust your balance and roll Professionalism.",
+        "Qualidade": "Professionalism",
+        "Sucesso": "On a success, you change the orientation of gravity up to 90 degrees in a direction of your choosing. If you’re in a room, it affects only that room. If you’re outside, it affects everything within about 30 yards. This effect lasts until you make another roll.",
+        "Triforce": "For each additional 3, choose one: The change doesn’t affect a single target, such as yourself. The range is infinite for a single target. Gravity for a single target is rotated further than 90 degrees.",
+        "Falha": "On a failure, you become unmoored from gravity. For at least an hour your body acts as if it is in a zero gravity environment. Anyone who sees this will become a Loose End.",
+        "Pergunta": "When in crisis, I...",
+        "Resposta A": "Fly.",
+        "numeracao A": "P6",
+        "Resposta B": "Fight.",
+        "numeracao B": "S18"
+      }
+    },
+    "Absence": {
+      "Habilidade 1": {
+        "Nome": "Missed!",
+        "Texto": "They never seem to know where you are. When something might touch or hurt you, you can say “Missed!” and roll Duplicity.",
+        "Qualidade": "Duplicity",
+        "Sucesso": "On a success, you were always somewhere else nearby—perhaps behind or on top of whatever tried to touch you.",
+        "Triforce": "For each additional 3, another willing, nearby target may be moved with you to the new location.",
+        "Falha": "On a failure, the target moves instead—to hurt another, to an angle that deals additional Harm, or to a very inconvenient place.",
+        "Pergunta": "In an argument, I'll win by...",
+        "Resposta A": "Identifying gaps in logic.",
+        "numeracao A": "I2",
+        "Resposta B": "Never backing down.",
+        "numeracao B": "M10"
+      },
+      "Habilidade 2": {
+        "Nome": "Negatives",
+        "Texto": "Inspect the place where something once was. Roll Attentiveness.",
+        "Qualidade": "Attentiveness",
+        "Sucesso": "On a success, you can see the lost history of the place you’re inspecting. If a note was removed, you know what it read—if an object was stolen, you know what it was and how it left.",
+        "Triforce": "On every third 3, you may say one sentence about what is lost, and that sentence is true.",
+        "Falha": "On a failure, there’s too much loss. You become overwhelmed by the history of the location you’re in, and receive one Harm—in addition to any Loose Ends caused by your visible, painful reaction.",
+        "Pergunta": "To fill empty space, I tend to...",
+        "Resposta A": "Make conversation.",
+        "numeracao A": "W5",
+        "Resposta B": "Take up more of it.",
+        "numeracao B": "C6"
+      },
+      "Habilidade 3": {
+        "Nome": "Unbound",
+        "Texto": "If something is in your way or holding you back, relax your body and roll Subtlety.",
+        "Qualidade": "Subtlety",
+        "Sucesso": "On a success, you pass directly through it. You become intangible and can move easily through walls, chains, and other obstructions for one hour.",
+        "Triforce": "On every third 3, choose one: You become invisible You become inaudible You become unmemorable to one observer You bring one person with you any time you pass through an obstacle while using this ability.",
+        "Falha": "On a failure, you lose control of your physical form and become unstable. You are unable to feel, hold, or interact with physical objects, but can still be Harmed for the remainder of the mission or until you die, whichever comes first.",
+        "Pergunta": "I'd rather be...",
+        "Resposta A": "The distraction.",
+        "numeracao A": "U3",
+        "Resposta B": "Undercover.",
+        "numeracao B": "O3"
+      }
+    }
+  },
+  "competency": {
+    "PR": {
+      "Pg": "101",
+      "PrimeDirective": {
+        "name": "Keep everything above board.",
+        "text": "Each time you lie, receive 1 Demerit."
+      },
+      "SactionedBehaviors": {
+        "effect1": "Create a distraction.",
+        "effect2": "Give a great excuse.",
+        "effect3": "Ensure they will never speak of this again."
+      },
+      "InitialRequisition": {
+        "name": "Printing Press Release",
+        "text": "This ancient, unwieldy printing press is kept in an old recreation room on an unused floor in your Agency headquarters. Once eachmission, you may use the press to print a story which is then immediately published across all major local publications. If you're on the go, you can send your story to the others in your department to run it through the press."
+      },
+      "SelfAssessment": {
+        "text": "Please answer the following questions and increase your maximum Quality Assurances by 3 in the Qualities corresponding to your answers. When you begin your first mission, you will have a total of nine Quality Assurances available to you. Quality Assurances return to their current maximum at the end of each mission. Afterwards, please provide your GM with a short description of the work you'd most like to do within this department and any requests for specific supervisors or coworkers.",
+        "question1": "When a coworker embarrasses themselves in public, I...",
+        "respostas1": {
+          "a": {
+            "text": "Loudly say 'How avant garde!'",
+            "quality": "(+3 Presence)"
+          },
+          "b": {
+            "text": "Repeat their behavior until it seems normal.",
+            "quality": "(+3 Persistence)"
+          }
+        },
+        "question2": "When one of our products causes a serious tragedy, my messaging...",
+        "resposta2": {
+          "a": {
+            "text": "Communicates our regret.",
+            "quality": "(+3 Duplicity)"
+          },
+          "b": {
+            "text": "Explains how it hurts us, too.",
+            "quality": "(+3 Empathy)"
+          }
+        },
+        "question3": "A coworker has been murdered! I am...",
+        "resposta3": {
+          "a": {
+            "text": "The murderer.",
+            "quality": "(+3 Initiative)"
+          },
+          "b": {
+            "text": "Due for a promotion.",
+            "quality": "(+3 Subtlety)"
+          }
+        }
+      }
+    },
+    "R&D": {
+      "Pg": "103",
+      "PrimeDirective": {
+        "name": "Out with the old.",
+        "text": "Each time you do the same thing twice, receive 1 Demerit."
+      },
+      "SactionedBehaviors": {
+        "effect1": "Uncover what someone really needs.",
+        "effect2": "Reinvent the wheel.",
+        "effect3": "Change someone's life. Permanently."
+      },
+      "InitialRequisition": {
+        "name": "Rubber Duck",
+        "text": "The squeaker within this bath toy foretells great possibility. Once per mission, you may describe an outcome to this pocket-sized duck toy. The toy will speak back: your GM will tell you the 3 steps you must take to achieve that outcome. Any outcome you request becomes possible, no matter how improbable it seems. If you ask the Rubber Duck about Anomalies directly, it will melt into a useless lump instead."
+      },
+      "SelfAssessment": {
+        "text": "Please answer the following questions and increase your maximum Quality Assurances by 3 in the Qualities corresponding to your answers. When you begin your first mission, you will have a total of nine Quality Assurances available to you. Quality Assurances return to their current maximum at the end of each mission. Afterwards, please provide your GM with a short description of the work you'd most like to do within this department and any requests for specific supervisors or coworkers.",
+        "question1": "If at first you don't succeed...",
+        "respostas1": {
+          "a": {
+            "text": "Never let them see you cry.",
+            "quality": "(+3 Professionalism)"
+          },
+          "b": {
+            "text": "Try try try try try try try.",
+            "quality": "(+3 Persistence)"
+          }
+        },
+        "question2": "When I'm solving an equation and the conclusion seems impossible, I...",
+        "resposta2": {
+          "a": {
+            "text": "Remind myself it's natural to make mistakes.",
+            "quality": "(+3 Empathy)"
+          },
+          "b": {
+            "text": "Eliminate all other possibilities.",
+            "quality": "(+3 Dynamism)"
+          }
+        },
+        "question3": "I've been framed! I defend myself by...",
+        "resposta3": {
+          "a": {
+            "text": "Destroying all incriminating evidence.",
+            "quality": "(+3 Subtlety)"
+          },
+          "b": {
+            "text": "Scapegoating a more likely suspect.",
+            "quality": "(+3 Attentiveness)"
+          }
+        }
+      }
+    },
+    "Barista": {
+      "Pg": "105",
+      "PrimeDirective": {
+        "name": "Keep the mood fresh.",
+        "text": "Each time you say someone's name correctly, receive 1 Demerit."
+      },
+      "SactionedBehaviors": {
+        "effect1": "Make someone feel welcome.",
+        "effect2": "Show off your specialized knowledge.",
+        "effect3": "Get some blood flowing."
+      },
+      "InitialRequisition": {
+        "name": "Triple Shot Glass",
+        "text": "The Barista has a special shot glass from the Vault Cafe. Once each mission, if this shot glass is used when pulling espresso from any espresso machine, the resulting shot can be poured into the mouth of a dead body to return them to life for ten minutes. Whether Anomalous or Mundane, they cannot survive any amount of Harm."
+      },
+      "SelfAssessment": {
+        "text": "Please answer the following questions and increase your maximum Quality Assurances by 3 in the Qualities corresponding to your answers. When you begin your first mission, you will have a total of nine Quality Assurances available to you. Quality Assurances return to their current maximum at the end of each mission. Afterwards, please provide your GM with a short description of the work you'd most like to do within this department and any requests for specific supervisors or coworkers.",
+        "question1": "A coworker asks me to cover their shift because of a breakup. I...",
+        "respostas1": {
+          "a": {
+            "text": "Cover their shift.",
+            "quality": "(+3 Empathy)"
+          },
+          "b": {
+            "text": "Get them back together.",
+            "quality": "(+3 Professionalism)"
+          }
+        },
+        "question2": "Someone's drink was stolen by a stranger! I handle it by...",
+        "resposta2": {
+          "a": {
+            "text": "Pretending I didn't notice.",
+            "quality": "(+3 Duplicity)"
+          },
+          "b": {
+            "text": "Making two of every drink ahead of time.",
+            "quality": "(+3 Initiative)"
+          }
+        },
+        "question3": "A customer complained about my service. I'm more likely to...",
+        "resposta3": {
+          "a": {
+            "text": "Add something to the brew.",
+            "quality": "(+3 Subtlety)"
+          },
+          "b": {
+            "text": "Add them to the brew.",
+            "quality": "(+3 Dynamism)"
+          }
+        }
+      }
+    },
+    "CEO": {
+      "Pg": "107",
+      "PrimeDirective": {
+        "name": "Maintain the hierarchy.",
+        "text": "Each time you take an order, receive 1 Demerit."
+      },
+      "SactionedBehaviors": {
+        "effect1": "Make someone do what you want.",
+        "effect2": "Enjoy one of the finer things in life.",
+        "effect3": "Make a necessary sacrifice."
+      },
+      "InitialRequisition": {
+        "name": "Expense Account",
+        "text": "This enormous accountant’s ledger is rumored to contain every purchase made in the history of mankind. Once each mission, you may write that the Agency has acquired something specific in the ledger and it becomes Agency property. You may use it during this mission, but the Agency makes decisions about it going forward."
+      },
+      "SelfAssessment": {
+        "text": "Please answer the following questions and increase your maximum Quality Assurances by 3 in the Qualities corresponding to your answers. When you begin your first mission, you will have a total of nine Quality Assurances available to you. Quality Assurances return to their current maximum at the end of each mission. Afterwards, please provide your GM with a short description of the work you'd most like to do within this department and any requests for specific supervisors or coworkers.",
+        "question1": "When a coworker embarrasses themselves in public, I...",
+        "respostas1": {
+          "a": {
+            "text": "Hands-on.",
+            "quality": "(+3 Dynamism)"
+          },
+          "b": {
+            "text": "Treating employees like family.",
+            "quality": "(+3 Duplicity)"
+          }
+        },
+        "question2": "I inspire my team with my...",
+        "resposta2": {
+          "a": {
+            "text": "Oil Portrait.",
+            "quality": "(+3 Presence)"
+          },
+          "b": {
+            "text": "Automated out-of-office response.",
+            "quality": "(+3 Professionalism)"
+          }
+        },
+        "question3": "When cuts are unavoidable, I terminate the employee who...",
+        "resposta3": {
+          "a": {
+            "text": "Was late most often.",
+            "quality": "(+3 Attentiveness)"
+          },
+          "b": {
+            "text": "Was late today.",
+            "quality": "(+3 Initiative)"
+          }
+        }
+      }
+    },
+    "Intern": {
+      "Pg": "109",
+      "PrimeDirective": {
+        "name": "They wouldn't ask if it wasn't important.",
+        "text": "Each time you deny a request, receive 1 Demerit."
+      },
+      "SactionedBehaviors": {
+        "effect1": "Confidently fail.",
+        "effect2": "Embarrass yourself for others' benefit.",
+        "effect3": "Bring something screeching to a halt."
+      },
+      "InitialRequisition": {
+        "name": "Inherited Nametag",
+        "text": "All Interns are given an endless packet of blank nametags. Once each mission, you may write the name of someone you met today on a nametag and apply it somewhere on your person. Everyone except other Agents will treat you as the named person for as long as you keep the nametag on."
+      },
+      "SelfAssessment": {
+        "text": "Please answer the following questions and increase your maximum Quality Assurances by 3 in the Qualities corresponding to your answers. When you begin your first mission, you will have a total of nine Quality Assurances available to you. Quality Assurances return to their current maximum at the end of each mission. Afterwards, please provide your GM with a short description of the work you'd most like to do within this department and any requests for specific supervisors or coworkers.",
+        "question1": "When acquiring new skills, I am a...",
+        "respostas1": {
+          "a": {
+            "text": "Visual learner.",
+            "quality": "(+3 Attentiveness)"
+          },
+          "b": {
+            "text": "Pain-consequence learner.",
+            "quality": "(+3 Persistence)"
+          }
+        },
+        "question2": "I've suddenly come into a large inheritance. I will definitely...",
+        "resposta2": {
+          "a": {
+            "text": "Invest it in the Agency for mutual benefit.",
+            "quality": "(+3 Initiative)"
+          },
+          "b": {
+            "text": "Donate it to an Agency branch in need.",
+            "quality": "(+3 Empathy)"
+          }
+        },
+        "question3": "My direct supervisor has been secretly committing felonies! I...",
+        "resposta3": {
+          "a": {
+            "text": "Edit their calendar to create strong alibis.",
+            "quality": "(+3 Subtlety)"
+          },
+          "b": {
+            "text": "Turn myself in for their crimes.",
+            "quality": "(+3 Presence)"
+          }
+        }
+      }
+    },
+    "Gravedigger": {
+      "Pg": "111",
+      "PrimeDirective": {
+        "name": "KDon't dirty innocent hands.",
+        "text": "Each time you touch something living, receive 1 Demerit."
+      },
+      "SactionedBehaviors": {
+        "effect1": "Dig up some dirt.",
+        "effect2": "Clean up a mess.",
+        "effect3": "Bury a problem."
+      },
+      "InitialRequisition": {
+        "name": "Dracula's Coffin",
+        "text": "The coffin of the man himself lies deep in the vault, buried under layers of earth. You can exhume the coffin once each mission to place something inside that can fit. When the coffin is returned to the earth, whatever you placed inside never existed. All memories of it are erased, and every effect it had on the world is ascribed to other sources."
+      },
+      "SelfAssessment": {
+        "text": "Please answer the following questions and increase your maximum Quality Assurances by 3 in the Qualities corresponding to your answers. When you begin your first mission, you will have a total of nine Quality Assurances available to you. Quality Assurances return to their current maximum at the end of each mission. Afterwards, please provide your GM with a short description of the work you'd most like to do within this department and any requests for specific supervisors or coworkers.",
+        "question1": "When training new employees in my field, I emphasize...",
+        "respostas1": {
+          "a": {
+            "text": "Shovel technique.",
+            "quality": "(+3 Attentiveness)"
+          },
+          "b": {
+            "text": "Creating demand.",
+            "quality": "(+3 Initiative)"
+          }
+        },
+        "question2": "I'm in charge of the quarterly earnings reports. To ensure a good impression on shareholders, I...",
+        "resposta2": {
+          "a": {
+            "text": "Repeat the presentation until I get the desired response.",
+            "quality": "(+3 Persistence)"
+          },
+          "b": {
+            "text": "Bury the bad numbers under positive energy.",
+            "quality": "(+3 Presence)"
+          }
+        },
+        "question3": "I handle my higher-than-average knowledge of humanity's infinite pain by...",
+        "resposta3": {
+          "a": {
+            "text": "Enjoying the smell of tea and other small pleasures.",
+            "quality": "(+3 Subtlety)"
+          },
+          "b": {
+            "text": "Developing a higher-than-average knowledge of humanity's infinite joys to match.",
+            "quality": "(+3 Professionalism)"
+          }
+        }
+      }
+    },
+    "Reception": {
+      "Pg": "113",
+      "PrimeDirective": {
+        "name": "Remain ever vigilant.",
+        "text": {
+          "a": "Each time you sit down, receive 1 Demerit.",
+          "b": "Each time you leave a question unanswered, receive 1 Demerit."
+        }
+      },
+      "SactionedBehaviors": {
+        "effect1": "Interrogate someone.",
+        "effect2": "Commandeer belongings.",
+        "effect3": "Close a door forever."
+      },
+      "InitialRequisition": {
+        "name": "Moebius Circuit TV",
+        "text": "An endless room in the Vault made entirely of television screens. Once each  mission, you may use any internet- connected device to access a feed from one of the TVs in this room. The screen shows you up to thirty minutes of footage of any moment in time from a place you’ve visited that day."
+      },
+      "SelfAssessment": {
+        "text": "Please answer the following questions and increase your maximum Quality Assurances by 3 in the Qualities corresponding to your answers. When you begin your first mission, you will have a total of nine Quality Assurances available to you. Quality Assurances return to their current maximum at the end of each mission. Afterwards, please provide your GM with a short description of the work you'd most like to do within this department and any requests for specific supervisors or coworkers.",
+        "question1": "A coworker of four years has never learned my name. I...",
+        "respostas1": {
+          "a": {
+            "text": "Clearly and loudly introduce myself until they get the picture.",
+            "quality": "(+3 Presence)"
+          },
+          "b": {
+            "text": "Forget theirs.",
+            "quality": "(+3 Duplicity)"
+          }
+        },
+        "question2": "Somebody isn't who they claim to be. I verify their identity by...",
+        "resposta2": {
+          "a": {
+            "text": "Interrogating them.",
+            "quality": "(+3 Persistence)"
+          },
+          "b": {
+            "text": "Interrogating them.",
+            "quality": "(+3 Dynamism)"
+          }
+        },
+        "question3": "A criminal is breaking into my building while it is being evacuated due to a fire. I...",
+        "resposta3": {
+          "a": {
+            "text": "Ensure the fire is not interrupted.",
+            "quality": "(+3 Professionalism)"
+          },
+          "b": {
+            "text": "Recognize them as first responders and let them through.",
+            "quality": "(+3 Attentiveness)"
+          }
+        }
+      }
+    },
+    "Hotline": {
+      "Pg": "115",
+      "PrimeDirective": {
+        "name": "Never say 'unfortunately.'",
+        "text": "Each time you deliver bad news, receive 1 Demerit."
+      },
+      "SactionedBehaviors": {
+        "effect1": "Help someone unburden themselves.",
+        "effect2": "Take the blame for something you didn't do.",
+        "effect3": "Connect someone to an unexpected fate."
+      },
+      "InitialRequisition": {
+        "name": "Hold Music, Vol. 1",
+        "text": "You have a powerful tape player with a built-in speaker and one tape of bland, cheerful music. Once each mission, you can press play to immediately transport you and any nearby allies to a perfectly safe waiting room for up to one hour. When you return, all affected can place themselves anywhere in the room they left and no time has passed in the world around you."
+      },
+      "SelfAssessment": {
+        "text": "Please answer the following questions and increase your maximum Quality Assurances by 3 in the Qualities corresponding to your answers. When you begin your first mission, you will have a total of nine Quality Assurances available to you. Quality Assurances return to their current maximum at the end of each mission. Afterwards, please provide your GM with a short description of the work you'd most like to do within this department and any requests for specific supervisors or coworkers.",
+        "question1": "A customer has a problem I have been unable to fix in my own life. I...",
+        "respostas1": {
+          "a": {
+            "text": "Share the approaches that have failed, to save them time.",
+            "quality": "(+3 Empathy)"
+          },
+          "b": {
+            "text": "Assure them we can find a solution together.",
+            "quality": "(+3 Duplicity)"
+          }
+        },
+        "question2": "A customer has a broken product and a convincing story. I...",
+        "resposta2": {
+          "a": {
+            "text": "Pull every string necessary to get their refund.",
+            "quality": "(+3 Persistence)"
+          },
+          "b": {
+            "text": "Make it clear that all sales are final.",
+            "quality": "(+3 Dynamism)"
+          }
+        },
+        "question3": "A customer's call disconnected. I...",
+        "resposta3": {
+          "a": {
+            "text": "Call them back and submit an error report to IT.",
+            "quality": "(+3 Professionalism)"
+          },
+          "b": {
+            "text": "Complete the call without them.",
+            "quality": "(+3 Presence)"
+          }
+        }
+      }
+    },
+    "Clown": {
+      "Pg": "117",
+      "PrimeDirective": {
+        "name": "Keep them laughing.",
+        "text": "Each time you talk about feelings, receive 1 Demerit."
+      },
+      "SactionedBehaviors": {
+        "effect1": "Put on a show.",
+        "effect2": "Expose an embarrassing truth.",
+        "effect3": "Demand a smile."
+      },
+      "InitialRequisition": {
+        "name": "The Fool's Cap",
+        "text": "Once each mission, you may don the Fool’s Cap given to all Agency Clowns. For one minute, anything you do inspires laughter and enjoyment, no matter the action. Following this minute, mundane viewers will remember all actions you took fondly. This does not protect you from later viewers of the consequences."
+      },
+      "SelfAssessment": {
+        "text": "Please answer the following questions and increase your maximum Quality Assurances by 3 in the Qualities corresponding to your answers. When you begin your first mission, you will have a total of nine Quality Assurances available to you. Quality Assurances return to their current maximum at the end of each mission. Afterwards, please provide your GM with a short description of the work you'd most like to do within this department and any requests for specific supervisors or coworkers.",
+        "question1": "When I catch a thief making off with my balloon animals, I...",
+        "respostas1": {
+          "a": {
+            "text": "Teach them to make their own.",
+            "quality": "(+3 Empathy)"
+          },
+          "b": {
+            "text": "Show them balloons aren't the only thing I can tie into novel shapes.",
+            "quality": "(+3 Dynamism)"
+          }
+        },
+        "question2": "When one of our products causes a serious tragedy, my messaging...",
+        "resposta2": {
+          "a": {
+            "text": "A regular number of people.",
+            "quality": "(+3 Duplicity)"
+          },
+          "b": {
+            "text": "Everyone who needs a ride.",
+            "quality": "(+3 Persistence)"
+          }
+        },
+        "question3": "Finish this sentence: 'But doctor...'",
+        "resposta3": {
+          "a": {
+            "text": "I'm the doctor!",
+            "quality": "(+3 Presence)"
+          },
+          "b": {
+            "text": "I saw what happened to Pagliacci. The chaos. The carnage. The wars that followed. I would appreciate a more effective medical prescription.",
+            "quality": "(+3 Professionalism)"
+          }
+        }
+      }
+    }
+  },
+  "reality": {
+    "Caretaker": {
+      "RealityTrigger": {
+        "name": "Needy",
+        "text": "The GM may use Reality Trigger to put your Dependent in need of attention. If you ignore it, your Dependent will throw a fit now and demand your time later: the Relationship who has the least camaraderie with your Dependent loses one Connection. If you make your Dependent fix something on their own, allow them to be hurt, or place them under anyone else’s supervision, your relationship with them suffers. Mark the next empty box in a four-box 'Independent' track. When this happens while all boxes are marked, or they mature beyond your control, your Dependent no longer depends on you. You must choose a new Reality.",
+        "triggerName": "Independent"
+      },
+      "BournoutRelease": {
+        "name": "It's Your Favorite!",
+        "text": "When you are doing something that will entertain your Dependent, ignore all Burnout."
+      },
+      "OnboardingQuestions": {
+        "a": "What is your favorite memory?",
+        "b": "What quality of yours do you hope to never teach your Dependent?",
+        "c": "Where is your dream vacation destination?"
+      },
+      "RelationshipMatrix": {
+        "text": "You have three core Relationships that are your anchors to society. Identify them by answering the questions in your Relationship Matrix. Once every Relationship has been identified, assign each to another <Agent/player> at the table. When each character is present in a scene, they will be portrayed by the assigned <Agent/player>. Give the Relationship you’re closest to 6 Connection. Give the other two 3 Connection."
+      },
+      "Page": "80"
+    },
+    "Overbooked": {
+      "RealityTrigger": {
+        "name": "Work Phone",
+        "text": "You have a smartphone specifically dedicated to your Vocation. The GM may use Reality Trigger to have one of your Relationships call this phone at any time. If you ignore it, that Relationship loses one Connection. If you fail to do the necessary duties of your Vocation, or you lose your phone, mark the next empty box in a four-box 'Something Gives' track. When this happens while all boxes are marked, your Vocation is irrevocably ended. If ended this way or through any other means, you must choose a new Reality.",
+        "triggerName": "Something Gives"
+      },
+      "BournoutRelease": {
+        "name": "Threading the Needle",
+        "text": "When you are doing something that counts as work or practice for your Vocation, ignore all Burnout."
+      },
+      "OnboardingQuestions": {
+        "a": "What is the most difficult decision you’ve ever made?",
+        "b": "What terrible thing will happen ifyou give up your responsibilities?",
+        "c": "How do you celebrate victories?"
+      },
+      "RelationshipMatrix": {
+        "text": "You have three core Relationships that are your anchors to society. Identify them by answering the questions in your Relationship Matrix. Once every Relationship has been identified, assign each to another <Agent/player> at the table. When each character is present in a scene, they will be portrayed by the assigned <Agent/player>. Give the Relationship you’re closest to 6 Connection. Give the other two 3 Connection."
+      },
+      "Page": "82"
+    },
+    "Pursued": {
+      "RealityTrigger": {
+        "name": "On Your Trail",
+        "text": "The GM may use Reality Trigger to highlight a person who recognizes you and will report back to those looking for you. If you do not take time to put them off your scent, they go rooting around in your private life: the Relationship who knows the least about you loses one Connection and will ask some difficult questions during your next scene with them. If you reveal your new identity or location to people who would recognize you, mark the next empty box on a four-box 'Caught' track. When this happens while all boxes are marked, your past catches up to you. When it does, through this effect or otherwise, you must choose a new Reality.",
+        "triggerName": "Caught"
+      },
+      "BournoutRelease": {
+        "name": "Wasn't Me",
+        "text": "When you're doing something that will cover your tracks, ignore all Burnout."
+      },
+      "OnboardingQuestions": {
+        "a": "What do you miss the most from your old life?",
+        "b": "When do you feel the most powerful?",
+        "c": "If you were to run a charitable organization, what cause would it champion?"
+      },
+      "RelationshipMatrix": {
+        "text": "You have three core Relationships that are your anchors to society. Identify them by answering the questions in your Relationship Matrix. Once every Relationship has been identified, assign each to another <Agent/player> at the table. When each character is present in a scene, they will be portrayed by the assigned <Agent/player>. Give the Relationship you’re closest to 6 Connection. Give the other two 3 Connection."
+      },
+      "Page": "84"
+    },
+    "Star": {
+      "RealityTrigger": {
+        "name": "Your Biggest Fan",
+        "text": "You have fans everywhere, and all of them want a chance to talk to you. The GM may use Reality Trigger to have someone recognize you and become desperate for your attention. If you ignore them, they make a scene now and complain online later: the Relationship that would lose the most if you fell from fame loses one Connection. If you do something to damage your reputation, your fame starts to dwindle. Mark the next empty box in a four-box 'Fallen' track. When the Fallen track is full, or when you give up on your goals, your rise to stardom is finished: you must choose a new Reality.",
+        "triggerName": "Fallen"
+      },
+      "BournoutRelease": {
+        "name": "Eat It Up",
+        "text": "When you are doing something that will assert your superiority or prove your worth, ignore all Burnout."
+      },
+      "OnboardingQuestions": {
+        "a": "Who is your personal idol?",
+        "b": "What will you be forced to return to if you lose the spotlight?",
+        "c": "What animal do you feel best represents you?"
+      },
+      "RelationshipMatrix": {
+        "text": "You have three core Relationships that are your anchors to society. Identify them by answering the questions in your Relationship Matrix. Once every Relationship has been identified, assign each to another <Agent/player> at the table. When each character is present in a scene, they will be portrayed by the assigned <Agent/player>. Give the Relationship you’re closest to 6 Connection. Give the other two 3 Connection."
+      },
+      "Page": "86"
+    },
+    "Struggling": {
+      "RealityTrigger": {
+        "name": "Fly in Your Wallet",
+        "text": "The Struggling never has enough money, and the world is expensive. The GM may use Reality Trigger to make something you’re obligated to pay (taxi fare, cover charge, etc.) cost more money than you can afford to spend. If you do not find a way to escape payment, you’ll have to borrow from a friend: one of your Relationships, chosen by you, loses one Connection. If you gain a large sum of money, your debts come calling and it quickly disappears. Mark the next empty box on a four-box 'Back to Zero' track. When this happens while all four boxes are marked, or you find a way to permanently escape your responsibilities, you must choose a new Reality.",
+        "triggerName": "Back to Zero"
+      },
+      "BournoutRelease": {
+        "name": "Not a Penny More",
+        "text": "When you are doing something that will get you a good deal, ignore all Burnout."
+      },
+      "OnboardingQuestions": {
+        "a": "What is the most expensive thing you wish you could buy?",
+        "b": "What will you never get back?",
+        "c": "What is the first piece of visual art you fell in love with?"
+      },
+      "RelationshipMatrix": {
+        "text": "You have three core Relationships that are your anchors to society. Identify them by answering the questions in your Relationship Matrix. Once every Relationship has been identified, assign each to another <Agent/player> at the table. When each character is present in a scene, they will be portrayed by the assigned <Agent/player>. Give the Relationship you’re closest to 6 Connection. Give the other two 3 Connection."
+      },
+      "Page": "88"
+    },
+    "Newborn": {
+      "RealityTrigger": {
+        "name": "Still Learning",
+        "text": "The GM may use Reality Trigger to have you forget—or never have known—how to do a common everyday activity (open a door, operate a toaster, fire a gun, say the word “earwax,” etc.) You cannot do it right now, and need to seek assistance or an alternative path. If you do not take the time to find either, the embarrassment sends you retreating: the Relationship whose opinion you value the most loses one Connection. If you change something about yourself to fit into the world, mark the next empty box on a four-box 'Self-Made' track. When this happens while all four boxes are marked, or you find a way to permanently escape your responsibilities, you must choose a new Reality.",
+        "triggerName": "Self-Made"
+      },
+      "BournoutRelease": {
+        "name": "Just Like Home",
+        "text": "When you are doing something that will make the world more like you, ignore all Burnout."
+      },
+      "OnboardingQuestions": {
+        "a": "How did you end up here?",
+        "b": "What is the last thing that made you feel completely alone?",
+        "c": "If you had an extra day in the week, how would you use it?"
+      },
+      "RelationshipMatrix": {
+        "text": "You have three core Relationships that are your anchors to society. Identify them by answering the questions in your Relationship Matrix. Once every Relationship has been identified, assign each to another <Agent/player> at the table. When each character is present in a scene, they will be portrayed by the assigned <Agent/player>. Give the Relationship you’re closest to 6 Connection. Give the other two 3 Connection."
+      },
+      "Page": "90"
+    },
+    "Romantic": {
+      "RealityTrigger": {
+        "name": "Oh No, They're Hot",
+        "text": "You cannot ignore when an opportunity strikes. The GM may use Reality Trigger to have you notice a Vibe. This Vibe might be genuine or entirely imagined. If you don't shoot your shot, you dwell on the missed connection and struggle to be present: the Relationship you're closest to something real with loses 1 Connection. Each time an existing relationship gets in the way of a new one, mark the next empty box on a four-box 'Settled' track. When this happens while all four boxes are full, you know what you're looking for and might have already found it. You must choose a new Reality.",
+        "triggerName": "Settled"
+      },
+      "BournoutRelease": {
+        "name": "That's Right, I'm Hot",
+        "text": "Whenever you’re doing something that will make you look more attractive or sympathetic, ignore all Burnout."
+      },
+      "OnboardingQuestions": {
+        "a": "What’s the most appealing trait in a person?",
+        "b": "What about you are you hoping no one gets deep enough to see?",
+        "c": "What three things would you bring with you to a deserted island?"
+      },
+      "RelationshipMatrix": {
+        "text": "You have three core Relationships that are your anchors to society. Identify them by answering the questions in your Relationship Matrix. Once every Relationship has been identified, assign each to another <Agent/player> at the table. When each character is present in a scene, they will be portrayed by the assigned <Agent/player>. Give the Relationship you’re closest to 6 Connection. Give the other two 3 Connection."
+      },
+      "Page": "92"
+    },
+    "Backbone": {
+      "RealityTrigger": {
+        "name": "Endless Responsibility",
+        "text": "The GM may use Reality Trigger to have one of your organization’s members approach you with a need at any time. If you ignore or avoid them, you look bad to your organization and those who know it: a Relationship, chosen by the player of your successor (see Relationship Matrix) loses one Connection. If you break your Organization's rules or embarrass the other members, mark the next empty box on a four-box 'Ousted' track. When this happens while all boxes are marked, or when you abdicate your position, your successor takes over the organization. You must choose a new Reality.",
+        "triggerName": "Ousted"
+      },
+      "BournoutRelease": {
+        "name": "Here's My Card",
+        "text": "When you are doing something that will increase the influence of your Organization, ignore all Burnout."
+      },
+      "OnboardingQuestions": {
+        "a": "What is the greatest thing that someone else has done for you?",
+        "b": "How do you react to unsolicited criticism?",
+        "c": "What’s your favorite karaoke song?"
+      },
+      "RelationshipMatrix": {
+        "text": "You have three core Relationships that are your anchors to society. Identify them by answering the questions in your Relationship Matrix. Once every Relationship has been identified, assign each to another <Agent/player> at the table. When each character is present in a scene, they will be portrayed by the assigned <Agent/player>. Give the Relationship you’re closest to 6 Connection. Give the other two 3 Connection."
+      },
+      "Page": "94"
+    },
+    "Creature": {
+      "RealityTrigger": {
+        "name": "Yes Right Now",
+        "text": "Your true self has needs that others may understand but could never share. The GM may use Reality Trigger to have one of these urges bubble to the surface of your consciousness. If you ignore this urge, the willpower spent ignoring it causes you to struggle to communicate with others: the Relationship who most believes your disguise loses one Connection. If the truth about yourself is confessed or exposed to someone, mark the next empty box on a four-box 'Revealed' track. When this happens while all boxes are marked, or you are exposed publicly in a way that can't be undone, your disguise no longer functions. If you can continue to work you must choose a new Reality.",
+        "triggerName": "Revealed"
+      },
+      "BournoutRelease": {
+        "name": "Crushing It",
+        "text": "When you are doing something that will make you seem less interesting, ignore all Burnout."
+      },
+      "OnboardingQuestions": {
+        "a": "What made you decide on a life in a different world?",
+        "b": "What is the worst thing that could happen to your friends if you let down your guard?",
+        "c": "What is your favorite idiom?"
+      },
+      "RelationshipMatrix": {
+        "text": "You have three core Relationships that are your anchors to society. Identify them by answering the questions in your Relationship Matrix. Once every Relationship has been identified, assign each to another <Agent/player> at the table. When each character is present in a scene, they will be portrayed by the assigned <Agent/player>. Give the Relationship you’re closest to 6 Connection. Give the other two 3 Connection."
+      },
+      "Page": "96"
+    }
+  },
+  "Agent": {
+    "questions": {
+      "1": "How did you come in contact with you Anomaly?",
+      "2": "How did the Agency find you?",
+      "3": "Do your powers have a unique visual manifestation?",
+      "4": "How do you take your coffee?",
+      "5": "Please describe your prior work experience.",
+      "6": "what is your level of familiarity with Adobe, Excel and Google Suite?",
+      "7": "What do you bring to the table in a collaborative work environment?",
+      "8": "Additional Notes"
+    }
+  }
+}
