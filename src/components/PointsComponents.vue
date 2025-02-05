@@ -6,13 +6,13 @@ import SingleLineNumberInput from './inputs/SingleLineNumberInput.vue'
   <div class="input_container">
     <ul>
       <li>
-        <SingleLineNumberInput nome="Commendations" />
+        <SingleLineNumberInput nome="Commendations" :chave="'Commendations'" />
       </li>
       <li>
-        <SingleLineNumberInput nome="Demerits" />
+        <SingleLineNumberInput nome="Demerits" :chave="'Demerits'" />
       </li>
       <li>
-        <SingleLineNumberInput nome="Additional Burnout" />
+        <SingleLineNumberInput nome="Additional Burnout" :chave="'Additional Burnout'" />
       </li>
     </ul>
   </div>

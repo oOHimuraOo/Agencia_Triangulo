@@ -9,6 +9,7 @@ interface Props {
   resposta2: string
   numero1: string
   numero2: string
+  chave: string
 }
 
 const props = defineProps<Props>()
@@ -55,11 +56,11 @@ const salvarInfos = () => {
     return
   }
 
-  if (localStorage.getItem(props.pergunta)) {
-    localStorage.removeItem(props.pergunta)
+  if (localStorage.getItem(props.chave)) {
+    localStorage.removeItem(props.chave)
   }
 
-  const chave = props.pergunta
+  const chave = props.chave
   const dict = {
     '1': respostasA.value ?? respostasA,
     '2': respostasB.value ?? respostasB,
@@ -69,11 +70,11 @@ const salvarInfos = () => {
 }
 
 const carregarInfos = () => {
-  if (!props.pergunta) {
+  if (!props.chave) {
     return
   }
 
-  const memoria = localStorage.getItem(props.pergunta)
+  const memoria = localStorage.getItem(props.chave)
   if (!memoria) {
     return
   }

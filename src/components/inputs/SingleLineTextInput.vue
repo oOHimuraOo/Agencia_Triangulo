@@ -3,6 +3,7 @@ import { computed, onMounted, ref, watch } from 'vue'
 
 interface Props {
   nome: string
+  chave: string
 }
 
 const props = defineProps<Props>()
@@ -19,11 +20,11 @@ const intemediator = (evento: Event) => {
 }
 
 const loadInfos = () => {
-  if (!props.nome) {
+  if (!props.chave) {
     return
   }
 
-  const memoria = localStorage.getItem(props.nome)
+  const memoria = localStorage.getItem(props.chave)
   if (!memoria) {
     return
   }
@@ -40,15 +41,15 @@ const loadInfos = () => {
 }
 
 const salvarInfos = () => {
-  if (!props.nome) {
+  if (!props.chave) {
     return
   }
 
-  if (localStorage.getItem(props.nome)) {
-    localStorage.removeItem(props.nome)
+  if (localStorage.getItem(props.chave)) {
+    localStorage.removeItem(props.chave)
   }
 
-  const chave = props.nome
+  const chave = props.chave
   const dict = {
     texto: texto.value ?? texto,
   }

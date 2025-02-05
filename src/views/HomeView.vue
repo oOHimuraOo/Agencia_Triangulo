@@ -9,6 +9,7 @@ import RequisitionsChart from '@/components/RequisitionsComponent.vue'
 import RelationshipComponent from '@/components/RelationshipComponent.vue'
 import CustomTracksComponent from '@/components/CustomTracksComponent.vue'
 import WelcomeComponent from '@/components/WelcomeComponent.vue'
+import ExportImportFloater from '@/components/floater/ExportImportFloater.vue'
 import { onMounted, ref } from 'vue'
 
 const selectedAnomaly = ref('')
@@ -91,6 +92,7 @@ const updatePronoun = (newPronoun: string) => {
     <div class="welcome">
       <WelcomeComponent :nome-personagem="selectedName" :pronome-personagem="selectedPronoun" />
     </div>
+    <ExportImportFloater />
   </div>
 </template>
 

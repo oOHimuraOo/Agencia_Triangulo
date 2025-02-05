@@ -48,11 +48,11 @@ const updatePronoun = (newPronoun: string) => {
     <div class="agent_info">
       <ul>
         <li>
-          <SingleLineTextInput nome="Character Name" @character-name="updateName" />
-          <SingleLineTextInput nome="Pronouns" @-character-pronouns="updatePronoun" />
+          <SingleLineTextInput nome="Character Name" @character-name="updateName" chave="Character Name"/>
+          <SingleLineTextInput nome="Pronouns" @-character-pronouns="updatePronoun" chave="Pronouns"/>
         </li>
-        <li><SingleLineTextInput nome="Agency Title" /></li>
-        <li><SingleLineTextInput nome="Agency Standing" /></li>
+        <li><SingleLineTextInput nome="Agency Title" chave="Agency Title"/></li>
+        <li><SingleLineTextInput nome="Agency Standing" chave="Agency Standing"/></li>
       </ul>
     </div>
     <div class="agent_caracteristic">

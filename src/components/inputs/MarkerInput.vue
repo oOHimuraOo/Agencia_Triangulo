@@ -3,6 +3,7 @@ import { computed, onMounted, ref, watch } from 'vue'
 
 interface Props {
   skill: string
+  chave: string
 }
 
 const props = defineProps<Props>()
@@ -29,11 +30,11 @@ const intemediator = (numero: number, evento: Event) => {
 }
 
 const loadInfos = () => {
-  if (!props.skill) {
+  if (!props.chave) {
     return
   }
 
-  const memoria = localStorage.getItem(props.skill)
+  const memoria = localStorage.getItem(props.chave)
   if (!memoria) {
     return
   }
@@ -53,15 +54,15 @@ const loadInfos = () => {
 }
 
 const salvarInfos = () => {
-  if (!props.skill) {
+  if (!props.chave) {
     return
   }
 
-  if (localStorage.getItem(props.skill)) {
-    localStorage.removeItem(props.skill)
+  if (localStorage.getItem(props.chave)) {
+    localStorage.removeItem(props.chave)
   }
 
-  const chave = props.skill
+  const chave = props.chave
   const dict = {
     level: level.value ?? level,
     max: max.value ?? max,

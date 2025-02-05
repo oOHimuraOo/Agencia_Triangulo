@@ -6,31 +6,31 @@ import MarkerInput from './inputs/MarkerInput.vue'
   <div class="input_container">
     <ul>
       <li>
-        <MarkerInput skill="Attentiveness" />
+        <MarkerInput skill="Attentiveness" chave="Attentiveness"/>
       </li>
       <li>
-        <MarkerInput skill="Duplicity" />
+        <MarkerInput skill="Duplicity" chave="Duplicity"/>
       </li>
       <li>
-        <MarkerInput skill="Dynamism" />
+        <MarkerInput skill="Dynamism" chave="Dynamism"/>
       </li>
       <li>
-        <MarkerInput skill="Empathy" />
+        <MarkerInput skill="Empathy" chave="Empathy"/>
       </li>
       <li>
-        <MarkerInput skill="Initiative" />
+        <MarkerInput skill="Initiative" chave="Empathy"/>
       </li>
       <li>
-        <MarkerInput skill="Persistence" />
+        <MarkerInput skill="Persistence" chave="Persistence"/>
       </li>
       <li>
-        <MarkerInput skill="Presence" />
+        <MarkerInput skill="Presence" chave="Presence"/>
       </li>
       <li>
-        <MarkerInput skill="Professionalism" />
+        <MarkerInput skill="Professionalism" chave="Professionalism"/>
       </li>
       <li>
-        <MarkerInput skill="Subtlety" />
+        <MarkerInput skill="Subtlety" chave="Subtlety"/>
       </li>
     </ul>
   </div>

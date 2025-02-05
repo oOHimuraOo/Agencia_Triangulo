@@ -212,6 +212,7 @@ const descobrirQualidade = computed(() => {
                 :pergunta="descobrirPergunta(1)"
                 :resposta1="descobrirResposta1(1)"
                 :resposta2="descobrirResposta2(1)"
+                :chave="'anomalyRightColomun1'"
               />
             </div>
           </li>
@@ -241,6 +242,7 @@ const descobrirQualidade = computed(() => {
                 :pergunta="descobrirPergunta(2)"
                 :resposta1="descobrirResposta1(2)"
                 :resposta2="descobrirResposta2(2)"
+                :chave="'anomalyRightColomun1'"
               />
             </div>
           </li>
@@ -270,6 +272,7 @@ const descobrirQualidade = computed(() => {
                 :pergunta="descobrirPergunta(3)"
                 :resposta1="descobrirResposta1(3)"
                 :resposta2="descobrirResposta2(3)"
+                :chave="'anomalyRightColumn3'"
               />
             </div>
           </li>
