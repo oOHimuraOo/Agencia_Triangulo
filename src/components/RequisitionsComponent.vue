@@ -2,8 +2,8 @@
 import SelectInput from './inputs/SelectInput.vue'
 import ChartTittleCell2 from './cells/competency/ChartTittleCell2.vue'
 import ChartTextCell from './cells/competency/ChartTextCell.vue'
-import { computed } from 'vue';
-import dados from '../others/json/jsonData'
+import { computed } from 'vue'
+import dados, { type competencyData } from '../others/json/jsonData'
 
 interface Props {
   selected: string
@@ -13,17 +13,20 @@ const props = defineProps<Props>()
 
 const innitialRequisitionName = computed(() => {
   const competencia: string = props.selected
-  return dados.competency[competencia]?.["InitialRequisition"].name || "Nome Não encontrado"
+  const data: competencyData = dados.competency
+  return data[competencia]?.['InitialRequisition'].name || 'Nome Não encontrado'
 })
 
 const innitialRequisitionText = computed(() => {
-  const competencia:string = props.selected
-  return dados.competency[competencia]?.["InitialRequisition"].text || "Texto não encontrado"
+  const competencia: string = props.selected
+  const data: competencyData = dados.competency
+  return data[competencia]?.['InitialRequisition'].text || 'Texto não encontrado'
 })
 
 const innitialRequisitionPG = computed(() => {
   const competencia: string = props.selected
-  return dados.competency[competencia]?.["Pg"] || "Pagina não encontrada"
+  const data: competencyData = dados.competency
+  return data[competencia]?.['Pg'] || 'Pagina não encontrada'
 })
 </script>
 
@@ -43,7 +46,10 @@ const innitialRequisitionPG = computed(() => {
               <li class="margin">
                 <ul>
                   <li>
-                    <ChartTittleCell2 :-nome="innitialRequisitionName" :page="innitialRequisitionPG" />
+                    <ChartTittleCell2
+                      :-nome="innitialRequisitionName"
+                      :page="innitialRequisitionPG"
+                    />
                   </li>
                   <li>
                     <ChartTextCell :efeito="innitialRequisitionText" />

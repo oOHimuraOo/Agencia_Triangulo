@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import QuestionArea from './questions/questionArea.vue'
+import questionArea from './questions/QuestionArea.vue'
 import CrachaEmployee from './employee/CrachaEmployee.vue'
 import EmergencyContactEmployee from './employee/EmergencyContactEmployee.vue'
 import SalaryEmployee from './employee/SalaryEmployee.vue'
-import dados from '../others/json/jsonData'
+import dados, { type agentData } from '../others/json/jsonData'
 import { computed } from 'vue'
 
 interface Props {
@@ -22,35 +22,43 @@ const pronomePersonagem = computed(() => {
 })
 
 const question1 = computed(() => {
-  return dados.Agent.questions[1]
+  const data: agentData = dados.Agent
+  return data.questions[1]
 })
 
 const question2 = computed(() => {
-  return dados.Agent.questions[2]
+  const data: agentData = dados.Agent
+  return data.questions[2]
 })
 
 const question3 = computed(() => {
-  return dados.Agent.questions[3]
+  const data: agentData = dados.Agent
+  return data.questions[3]
 })
 
 const question4 = computed(() => {
-  return dados.Agent.questions[4]
+  const data: agentData = dados.Agent
+  return data.questions[4]
 })
 
 const question5 = computed(() => {
-  return dados.Agent.questions[5]
+  const data: agentData = dados.Agent
+  return data.questions[5]
 })
 
 const question6 = computed(() => {
-  return dados.Agent.questions[6]
+  const data: agentData = dados.Agent
+  return data.questions[6]
 })
 
 const question7 = computed(() => {
-  return dados.Agent.questions[7]
+  const data: agentData = dados.Agent
+  return data.questions[7]
 })
 
 const question8 = computed(() => {
-  return dados.Agent.questions[8]
+  const data: agentData = dados.Agent
+  return data.questions[8]
 })
 </script>
 
@@ -66,10 +74,10 @@ const question8 = computed(() => {
           </p>
         </div>
         <div class="questions_container">
-          <QuestionArea :pergunta="question1" :number="1" :chave="'q1'" />
-          <QuestionArea :pergunta="question2" :number="2" :chave="'q2'" />
-          <QuestionArea :pergunta="question3" :number="3" :chave="'q3'" />
-          <QuestionArea :pergunta="question4" :number="4" :chave="'q4'" />
+          <questionArea :pergunta="question1" :number="1" :chave="'q1'" />
+          <questionArea :pergunta="question2" :number="2" :chave="'q2'" />
+          <questionArea :pergunta="question3" :number="3" :chave="'q3'" />
+          <questionArea :pergunta="question4" :number="4" :chave="'q4'" />
         </div>
       </div>
       <div class="right_column_container">
@@ -86,10 +94,10 @@ const question8 = computed(() => {
     </div>
     <div class="bottom_container">
       <div class="questions_container">
-        <QuestionArea :pergunta="question5" :number="5" :chave="'q5'" />
-        <QuestionArea :pergunta="question6" :number="6" :chave="'q6'" />
-        <QuestionArea :pergunta="question7" :number="7" :chave="'q7'" />
-        <QuestionArea :pergunta="question8" :number="8" :chave="'q8'" />
+        <questionArea :pergunta="question5" :number="5" :chave="'q5'" />
+        <questionArea :pergunta="question6" :number="6" :chave="'q6'" />
+        <questionArea :pergunta="question7" :number="7" :chave="'q7'" />
+        <questionArea :pergunta="question8" :number="8" :chave="'q8'" />
       </div>
     </div>
   </div>

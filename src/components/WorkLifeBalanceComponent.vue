@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, onMounted, Prop, ref, watch } from 'vue'
+import { computed, onMounted, ref, watch } from 'vue'
 import alert from '../assets/alert-triangle-svgrepo-com.svg'
 import medalhista from '../assets/Medalhista.png'
 import prison from '../assets/prison-14-svgrepo-com.svg'

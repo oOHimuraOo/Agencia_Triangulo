@@ -75,7 +75,7 @@ onMounted(() => {
 watch(
   () => props.selected,
   (newValue) => {
-    selectedOption.value = newValue
+    selectedOption.value = newValue ?? ''
   },
 )
 

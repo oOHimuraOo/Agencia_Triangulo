@@ -375,7 +375,10 @@
       "Pg": "101",
       "PrimeDirective": {
         "name": "Keep everything above board.",
-        "text": "Each time you lie, receive 1 Demerit."
+        "text": {
+          "a": "Each time you lie, receive 1 Demerit.",
+          "b": "null"
+        }
       },
       "SactionedBehaviors": {
         "effect1": "Create a distraction.",
@@ -427,7 +430,10 @@
       "Pg": "103",
       "PrimeDirective": {
         "name": "Out with the old.",
-        "text": "Each time you do the same thing twice, receive 1 Demerit."
+        "text": {
+          "a": "Each time you do the same thing twice, receive 1 Demerit.",
+          "b": "null"
+        }
       },
       "SactionedBehaviors": {
         "effect1": "Uncover what someone really needs.",
@@ -479,7 +485,10 @@
       "Pg": "105",
       "PrimeDirective": {
         "name": "Keep the mood fresh.",
-        "text": "Each time you say someone's name correctly, receive 1 Demerit."
+        "text": {
+          "a": "Each time you say someone's name correctly, receive 1 Demerit.",
+          "b": "null"
+        }
       },
       "SactionedBehaviors": {
         "effect1": "Make someone feel welcome.",
@@ -531,7 +540,10 @@
       "Pg": "107",
       "PrimeDirective": {
         "name": "Maintain the hierarchy.",
-        "text": "Each time you take an order, receive 1 Demerit."
+        "text": {
+          "a": "Each time you take an order, receive 1 Demerit.",
+          "b": "null"
+        }
       },
       "SactionedBehaviors": {
         "effect1": "Make someone do what you want.",
@@ -583,7 +595,10 @@
       "Pg": "109",
       "PrimeDirective": {
         "name": "They wouldn't ask if it wasn't important.",
-        "text": "Each time you deny a request, receive 1 Demerit."
+        "text": {
+          "a": "Each time you deny a request, receive 1 Demerit.",
+          "b": "null"
+        }
       },
       "SactionedBehaviors": {
         "effect1": "Confidently fail.",
@@ -635,7 +650,10 @@
       "Pg": "111",
       "PrimeDirective": {
         "name": "KDon't dirty innocent hands.",
-        "text": "Each time you touch something living, receive 1 Demerit."
+        "text": {
+          "a": "Each time you touch something living, receive 1 Demerit.",
+          "b": "null"
+        }
       },
       "SactionedBehaviors": {
         "effect1": "Dig up some dirt.",
@@ -742,7 +760,10 @@
       "Pg": "115",
       "PrimeDirective": {
         "name": "Never say 'unfortunately.'",
-        "text": "Each time you deliver bad news, receive 1 Demerit."
+        "text": {
+          "a": "Each time you deliver bad news, receive 1 Demerit.",
+          "b": "null"
+        }
       },
       "SactionedBehaviors": {
         "effect1": "Help someone unburden themselves.",
@@ -794,7 +815,10 @@
       "Pg": "117",
       "PrimeDirective": {
         "name": "Keep them laughing.",
-        "text": "Each time you talk about feelings, receive 1 Demerit."
+        "text": {
+          "a": "Each time you talk about feelings, receive 1 Demerit.",
+          "b": "null"
+        }
       },
       "SactionedBehaviors": {
         "effect1": "Put on a show.",

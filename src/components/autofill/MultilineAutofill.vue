@@ -7,7 +7,9 @@ interface Props {
   tipo: 'Real' | 'Comp'
   placeholder: 1 | 2 | 3 | 4
   nome: string
-  texto: string
+  texto?: string
+  specialA?: string
+  specialB?: string
   texto2?: string
   texto3?: string
   extra: boolean
@@ -71,9 +73,9 @@ const texto3 = computed(() => {
     </div>
     <div class="body_container" :class="classe">
       <p class="frase_fixa">{{ placeholder }}</p>
-      <p class="texto_autofill">
-        {{ texto }}
-      </p>
+      <p class="texto_autofill" v-if="texto">{{ texto }}</p>
+      <p class="texto_autofill" v-if="specialA">{{ specialA }}</p>
+      <p class="texto_autofill" v-if="specialB !== 'null'">{{ specialB }}</p>
       <p class="texto_autofill" v-if="extra">{{ texto2 }}</p>
       <p class="texto_autofill" v-if="extra">{{ texto3 }}</p>
       <p class="frase_fixa" v-if="extra">{{ placeholder2 }}</p>

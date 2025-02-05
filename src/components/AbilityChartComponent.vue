@@ -4,6 +4,7 @@ import ChartLeftColumnCell from './cells/anomaly/ChartLeftColumnCell.vue'
 import ChartRightColumnCell from './cells/anomaly/ChartRightColumnCell.vue'
 import SelectInput from './inputs/SelectInput.vue'
 import dados from '../others/json/jsonData'
+import type { anomalyData } from '../others/json/jsonData'
 import { computed } from 'vue'
 
 interface Props {
@@ -15,13 +16,14 @@ const props = defineProps<Props>()
 const descobrirNome = computed(() => {
   return (habilidade: number) => {
     const anomalia: string = props.selected
+    const data: anomalyData = dados.anomaly
 
     if (habilidade === 1) {
-      return dados.anomaly[anomalia]?.['Habilidade 1']?.Nome || 'Nome Desconhecido'
+      return data[anomalia]?.['Habilidade 1']?.Nome || 'Nome Desconhecido'
     } else if (habilidade === 2) {
-      return dados.anomaly[anomalia]?.['Habilidade 2']?.Nome || 'Nome Desconhecido'
+      return data[anomalia]?.['Habilidade 2']?.Nome || 'Nome Desconhecido'
     } else {
-      return dados.anomaly[anomalia]?.['Habilidade 3']?.Nome || 'Nome Desconhecido'
+      return data[anomalia]?.['Habilidade 3']?.Nome || 'Nome Desconhecido'
     }
   }
 })
@@ -29,13 +31,14 @@ const descobrirNome = computed(() => {
 const descobrirGatilho = computed(() => {
   return (habilidade: number) => {
     const anomalia: string = props.selected
+    const data: anomalyData = dados.anomaly
 
     if (habilidade === 1) {
-      return dados.anomaly[anomalia]?.['Habilidade 1']?.Texto || 'Trigger Desconhecido'
+      return data[anomalia]?.['Habilidade 1']?.Texto || 'Trigger Desconhecido'
     } else if (habilidade === 2) {
-      return dados.anomaly[anomalia]?.['Habilidade 2']?.Texto || 'Trigger Desconhecido'
+      return data[anomalia]?.['Habilidade 2']?.Texto || 'Trigger Desconhecido'
     } else {
-      return dados.anomaly[anomalia]?.['Habilidade 3']?.Texto || 'Trigger Desconhecido'
+      return data[anomalia]?.['Habilidade 3']?.Texto || 'Trigger Desconhecido'
     }
   }
 })
@@ -43,13 +46,14 @@ const descobrirGatilho = computed(() => {
 const descobrirSucesso = computed(() => {
   return (habilidade: number) => {
     const anomalia: string = props.selected
+    const data: anomalyData = dados.anomaly
 
     if (habilidade === 1) {
-      return dados.anomaly[anomalia]?.['Habilidade 1']?.Sucesso || 'Sucesso Desconhecido'
+      return data[anomalia]?.['Habilidade 1']?.Sucesso || 'Sucesso Desconhecido'
     } else if (habilidade === 2) {
-      return dados.anomaly[anomalia]?.['Habilidade 2']?.Sucesso || 'Sucesso Desconhecido'
+      return data[anomalia]?.['Habilidade 2']?.Sucesso || 'Sucesso Desconhecido'
     } else {
-      return dados.anomaly[anomalia]?.['Habilidade 3']?.Sucesso || 'Sucesso Desconhecido'
+      return data[anomalia]?.['Habilidade 3']?.Sucesso || 'Sucesso Desconhecido'
     }
   }
 })
@@ -57,13 +61,14 @@ const descobrirSucesso = computed(() => {
 const descobrirTriforce = computed(() => {
   return (habilidade: number) => {
     const anomalia: string = props.selected
+    const data: anomalyData = dados.anomaly
 
     if (habilidade === 1) {
-      return dados.anomaly[anomalia]?.['Habilidade 1']?.Triforce || 'Triforce Desconhecido'
+      return data[anomalia]?.['Habilidade 1']?.Triforce || 'Triforce Desconhecido'
     } else if (habilidade === 2) {
-      return dados.anomaly[anomalia]?.['Habilidade 2']?.Triforce || 'Triforce Desconhecido'
+      return data[anomalia]?.['Habilidade 2']?.Triforce || 'Triforce Desconhecido'
     } else {
-      return dados.anomaly[anomalia]?.['Habilidade 3']?.Triforce || 'Triforce Desconhecido'
+      return data[anomalia]?.['Habilidade 3']?.Triforce || 'Triforce Desconhecido'
     }
   }
 })
@@ -71,13 +76,14 @@ const descobrirTriforce = computed(() => {
 const descobrirFalha = computed(() => {
   return (habilidade: number) => {
     const anomalia: string = props.selected
+    const data: anomalyData = dados.anomaly
 
     if (habilidade === 1) {
-      return dados.anomaly[anomalia]?.['Habilidade 1']?.Falha || 'Falha desconhecida'
+      return data[anomalia]?.['Habilidade 1']?.Falha || 'Falha desconhecida'
     } else if (habilidade === 2) {
-      return dados.anomaly[anomalia]?.['Habilidade 2']?.Falha || 'Falha desconhecida'
+      return data[anomalia]?.['Habilidade 2']?.Falha || 'Falha desconhecida'
     } else {
-      return dados.anomaly[anomalia]?.['Habilidade 3']?.Falha || 'Falha desconhecida'
+      return data[anomalia]?.['Habilidade 3']?.Falha || 'Falha desconhecida'
     }
   }
 })
@@ -85,13 +91,14 @@ const descobrirFalha = computed(() => {
 const descobrirPergunta = computed(() => {
   return (habilidade: number) => {
     const anomalia: string = props.selected
+    const data: anomalyData = dados.anomaly
 
     if (habilidade === 1) {
-      return dados.anomaly[anomalia]?.['Habilidade 1']?.Pergunta || 'Pergunta desconhecida'
+      return data[anomalia]?.['Habilidade 1']?.Pergunta || 'Pergunta desconhecida'
     } else if (habilidade === 2) {
-      return dados.anomaly[anomalia]?.['Habilidade 2']?.Pergunta || 'Pergunta desconhecida'
+      return data[anomalia]?.['Habilidade 2']?.Pergunta || 'Pergunta desconhecida'
     } else {
-      return dados.anomaly[anomalia]?.['Habilidade 3']?.Pergunta || 'Pergunta desconhecida'
+      return data[anomalia]?.['Habilidade 3']?.Pergunta || 'Pergunta desconhecida'
     }
   }
 })
@@ -99,13 +106,14 @@ const descobrirPergunta = computed(() => {
 const descobrirResposta1 = computed(() => {
   return (habilidade: number) => {
     const anomalia: string = props.selected
+    const data: anomalyData = dados.anomaly
 
     if (habilidade === 1) {
-      return dados.anomaly[anomalia]?.['Habilidade 1']?.['Resposta A'] || 'Resposta desconhecida'
+      return data[anomalia]?.['Habilidade 1']?.['Resposta A'] || 'Resposta desconhecida'
     } else if (habilidade === 2) {
-      return dados.anomaly[anomalia]?.['Habilidade 2']?.['Resposta A'] || 'Resposta desconhecida'
+      return data[anomalia]?.['Habilidade 2']?.['Resposta A'] || 'Resposta desconhecida'
     } else {
-      return dados.anomaly[anomalia]?.['Habilidade 3']?.['Resposta A'] || 'Resposta desconhecida'
+      return data[anomalia]?.['Habilidade 3']?.['Resposta A'] || 'Resposta desconhecida'
     }
   }
 })
@@ -113,13 +121,14 @@ const descobrirResposta1 = computed(() => {
 const descobrirResposta2 = computed(() => {
   return (habilidade: number) => {
     const anomalia: string = props.selected
+    const data: anomalyData = dados.anomaly
 
     if (habilidade === 1) {
-      return dados.anomaly[anomalia]?.['Habilidade 1']?.['Resposta B'] || 'Resposta desconhecida'
+      return data[anomalia]?.['Habilidade 1']?.['Resposta B'] || 'Resposta desconhecida'
     } else if (habilidade === 2) {
-      return dados.anomaly[anomalia]?.['Habilidade 2']?.['Resposta B'] || 'Resposta desconhecida'
+      return data[anomalia]?.['Habilidade 2']?.['Resposta B'] || 'Resposta desconhecida'
     } else {
-      return dados.anomaly[anomalia]?.['Habilidade 3']?.['Resposta B'] || 'Resposta desconhecida'
+      return data[anomalia]?.['Habilidade 3']?.['Resposta B'] || 'Resposta desconhecida'
     }
   }
 })
@@ -127,13 +136,14 @@ const descobrirResposta2 = computed(() => {
 const descobrirNumero1 = computed(() => {
   return (habilidade: number) => {
     const anomalia: string = props.selected
+    const data: anomalyData = dados.anomaly
 
     if (habilidade === 1) {
-      return dados.anomaly[anomalia]?.['Habilidade 1']?.['numeracao A'] || 'Numero desconhecida'
+      return data[anomalia]?.['Habilidade 1']?.['numeracao A'] || 'Numero desconhecida'
     } else if (habilidade === 2) {
-      return dados.anomaly[anomalia]?.['Habilidade 2']?.['numeracao A'] || 'Numero desconhecida'
+      return data[anomalia]?.['Habilidade 2']?.['numeracao A'] || 'Numero desconhecida'
     } else {
-      return dados.anomaly[anomalia]?.['Habilidade 3']?.['numeracao A'] || 'Numero desconhecida'
+      return data[anomalia]?.['Habilidade 3']?.['numeracao A'] || 'Numero desconhecida'
     }
   }
 })
@@ -141,13 +151,14 @@ const descobrirNumero1 = computed(() => {
 const descobrirNumero2 = computed(() => {
   return (habilidade: number) => {
     const anomalia: string = props.selected
+    const data: anomalyData = dados.anomaly
 
     if (habilidade === 1) {
-      return dados.anomaly[anomalia]?.['Habilidade 1']?.['numeracao B'] || 'Numero desconhecida'
+      return data[anomalia]?.['Habilidade 1']?.['numeracao B'] || 'Numero desconhecida'
     } else if (habilidade === 2) {
-      return dados.anomaly[anomalia]?.['Habilidade 2']?.['numeracao B'] || 'Numero desconhecida'
+      return data[anomalia]?.['Habilidade 2']?.['numeracao B'] || 'Numero desconhecida'
     } else {
-      return dados.anomaly[anomalia]?.['Habilidade 3']?.['numeracao B'] || 'Numero desconhecida'
+      return data[anomalia]?.['Habilidade 3']?.['numeracao B'] || 'Numero desconhecida'
     }
   }
 })
@@ -155,13 +166,14 @@ const descobrirNumero2 = computed(() => {
 const descobrirQualidade = computed(() => {
   return (habilidade: number) => {
     const anomalia: string = props.selected
+    const data: anomalyData = dados.anomaly
 
     if (habilidade === 1) {
-      return dados.anomaly[anomalia]?.['Habilidade 1']?.Qualidade || 'Qualidade desconhecida'
+      return data[anomalia]?.['Habilidade 1']?.Qualidade || 'Qualidade desconhecida'
     } else if (habilidade === 2) {
-      return dados.anomaly[anomalia]?.['Habilidade 2']?.Qualidade || 'Qualidade desconhecida'
+      return data[anomalia]?.['Habilidade 2']?.Qualidade || 'Qualidade desconhecida'
     } else {
-      return dados.anomaly[anomalia]?.['Habilidade 3']?.Qualidade || 'Qualidade desconhecida'
+      return data[anomalia]?.['Habilidade 3']?.Qualidade || 'Qualidade desconhecida'
     }
   }
 })
