@@ -91,15 +91,15 @@ const copiarParaClipboard = async (texto: string) => {
 }
 
 const coletar_info = () => {
-  const info: string | null = prompt('Por favor cole aqui as informações de importação obtida:')
+  const info = prompt('Por favor cole aqui as informações de importação obtida:')
+  if (!info) {
+    alert('nenhuma informação obtida')
+    return
+  }
   implementarNovoSave(info)
 }
 
-const implementarNovoSave = (valor: string | null) => {
-  if (!valor) {
-    alert('nenhuma informação obtida')
-  }
-
+const implementarNovoSave = (valor: string) => {
   const save = JSON.parse(valor)
 
   if (save['anomalyRightColomun1'] !== undefined) {
