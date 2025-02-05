@@ -4,6 +4,7 @@ import barcode from '../../assets/bar-code-svgrepo-com.svg'
 import horizontal from '../../assets/horizontal-rule-svgrepo-com.svg'
 import camera from '../../assets/camera-svgrepo-com.svg'
 import prof from '../../assets/profile-round-1342-svgrepo-com.svg'
+import logo from '../../assets/triangleLogo.png'
 
 interface Props {
   nome: string
@@ -97,6 +98,10 @@ const nome = computed(() => {
 const pronome = computed(() => {
   return props.pronome
 })
+
+const triangleLogoIMG = computed(() => {
+  return logo
+})
 </script>
 
 <template>
@@ -130,7 +135,7 @@ const pronome = computed(() => {
           <span>Pronouns</span>
           <p>{{ pronome }}</p>
         </div>
-        <img src="https://placehold.co/100x50" alt="" />
+        <img :src="triangleLogoIMG" alt="" />
       </div>
     </div>
   </div>
