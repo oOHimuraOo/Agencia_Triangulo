@@ -649,7 +649,7 @@
     "Gravedigger": {
       "Pg": "111",
       "PrimeDirective": {
-        "name": "KDon't dirty innocent hands.",
+        "name": "Don't dirty innocent hands.",
         "text": {
           "a": "Each time you touch something living, receive 1 Demerit.",
           "b": "null"

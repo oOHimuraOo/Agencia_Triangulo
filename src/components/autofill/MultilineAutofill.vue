@@ -51,6 +51,15 @@ const classe = computed(() => {
   }
 })
 
+const classeBorder = computed(() => {
+  const tipo = props.tipo
+
+  if (tipo === 'Real') {
+    return 'yellowBorder'
+  } else {
+    return 'redBorder'
+  }
+})
 const extra = computed(() => {
   return props.extra
 })
@@ -71,7 +80,7 @@ const texto3 = computed(() => {
       <img :src="red" v-else />
       <label :class="classe"> {{ nome }} </label>
     </div>
-    <div class="body_container" :class="classe">
+    <div class="body_container" :class="classeBorder">
       <p class="frase_fixa">{{ placeholder }}</p>
       <p class="texto_autofill" v-if="texto">{{ texto }}</p>
       <p class="texto_autofill" v-if="specialA">{{ specialA }}</p>
@@ -142,12 +151,11 @@ const texto3 = computed(() => {
       margin-left: 5px;
     }
   }
-
-  .yellow {
+  .yellowBorder {
     border-left: 2px solid rgba($color: #ffff00, $alpha: 0.4);
   }
 
-  .red {
+  .redBorder {
     border-left: 2px solid rgba($color: #ff0000, $alpha: 0.4);
   }
 }

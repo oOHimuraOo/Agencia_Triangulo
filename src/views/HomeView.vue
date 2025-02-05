@@ -31,6 +31,7 @@ const howToUse = () => {
 onMounted(() => {
   howToUse()
 })
+
 const updateAnomaly = (value: string) => {
   selectedAnomaly.value = value
 }
@@ -97,9 +98,6 @@ const updatePronoun = (newPronoun: string) => {
 .container {
   max-width: 1024px;
   margin: 20px auto;
-
-  .basic_info {
-  }
 
   .halfpage {
     display: flex;
