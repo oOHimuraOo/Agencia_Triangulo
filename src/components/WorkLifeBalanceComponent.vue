@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, onMounted, ref, watch } from 'vue'
-import alert from '../assets/alert-triangle-svgrepo-com.svg'
+import alerta from '../assets/alert-triangle-svgrepo-com.svg'
 import medalhista from '../assets/Medalhista.png'
 import prison from '../assets/prison-14-svgrepo-com.svg'
 import playVermelho from '../assets/play-svgrepo-com.svg'
@@ -18,10 +18,154 @@ interface Props {
 const props = defineProps<Props>()
 
 const mvpValue = ref(0)
+const mvpValueUsado = ref(0)
 const probationValue = ref(0)
+const probationValueUsado = ref(0)
 const competancyLevel = ref(0)
+const competencyMax = ref(30)
 const realityLevel = ref(0)
+const realityMax = ref(30)
 const anomalyLevel = ref(0)
+const anomalyMax = ref(30)
+
+const atualizarCompetencyMax = (valor: number) => {
+  if (valor > 30) {
+    competencyMax.value = 30
+  } else if (valor < 0) {
+    competencyMax.value = 0
+  } else {
+    competencyMax.value = valor
+  }
+}
+
+const atualizarRealityMax = (valor: number) => {
+  if (valor > 30) {
+    realityMax.value = 30
+  } else if (valor < 0) {
+    realityMax.value = 0
+  } else {
+    realityMax.value = valor
+  }
+}
+
+const atualizarAnomalyMax = (valor: number) => {
+  if (valor > 30) {
+    anomalyMax.value = 30
+  } else if (valor < 0) {
+    anomalyMax.value = 0
+  } else {
+    anomalyMax.value = valor
+  }
+}
+
+const atualizarMvpValueUsado = (valor: number) => {
+  mvpValueUsado.value = valor
+}
+
+const atualizarProbationValueUsado = (valor: number) => {
+  probationValueUsado.value = valor
+}
+
+const modificarTrackLevel = (track: string, checked: boolean) => {
+  if (checked) {
+    if (track === 'comp') {
+      if (competancyLevel.value >= competencyMax.value) {
+        return
+      }
+
+      if (mvpValue.value > mvpValueUsado.value) {
+        atualizarMvpValueUsado(mvpValueUsado.value + 1)
+        atualizarCompetancyLevel(competancyLevel.value + 1, checked)
+      } else {
+        atualizarCompetancyLevel(competancyLevel.value + 1, checked)
+        atualizarRealityMax(realityMax.value - 1)
+        atualizarAnomalyMax(anomalyMax.value - 1)
+      }
+    } else if (track === 'real') {
+      if (realityLevel.value >= realityMax.value) {
+        return
+      }
+
+      atualizarRealityLevel(realityLevel.value + 1, checked)
+      atualizarCompetencyMax(competencyMax.value - 1)
+      atualizarAnomalyMax(anomalyMax.value - 1)
+    } else {
+      if (anomalyLevel.value >= anomalyMax.value) {
+        return
+      }
+
+      if (probationValue.value > probationValueUsado.value) {
+        atualizarProbationValueUsado(probationValueUsado.value + 1)
+        atualizarAnomalyLevel(anomalyLevel.value + 1, checked)
+      } else {
+        atualizarAnomalyLevel(anomalyLevel.value + 1, checked)
+        atualizarCompetencyMax(competencyMax.value - 1)
+        atualizarRealityMax(realityMax.value - 1)
+      }
+    }
+  } else {
+    if (track === 'comp') {
+      if (competancyLevel.value <= 0) {
+        return
+      }
+
+      if (mvpValue.value > 0 && mvpValueUsado.value > 0) {
+        atualizarMvpValueUsado(mvpValueUsado.value - 1)
+        atualizarCompetancyLevel(competancyLevel.value, checked)
+      } else {
+        atualizarCompetancyLevel(competancyLevel.value, checked)
+        atualizarRealityMax(realityMax.value + 1)
+        atualizarAnomalyMax(anomalyMax.value + 1)
+      }
+    } else if (track === 'real') {
+      if (realityLevel.value <= 0) {
+        return
+      }
+
+      atualizarRealityLevel(realityLevel.value, checked)
+      atualizarCompetencyMax(competencyMax.value + 1)
+      atualizarAnomalyMax(anomalyMax.value + 1)
+    } else {
+      if (anomalyLevel.value <= 0) {
+        return
+      }
+
+      if (probationValue.value > 0 && probationValueUsado.value > 0) {
+        atualizarProbationValueUsado(probationValueUsado.value - 1)
+        atualizarAnomalyLevel(anomalyLevel.value, checked)
+      } else {
+        atualizarAnomalyLevel(anomalyLevel.value, checked)
+        atualizarCompetencyMax(competencyMax.value + 1)
+        atualizarRealityMax(realityMax.value + 1)
+      }
+    }
+  }
+}
+
+const descobrirClasseDeMarcacao = (track: string, valor: number) => {
+  if (track === 'comp') {
+    if (valor >= competencyMax.value) {
+      return 'proibido'
+    }
+    return 'correto'
+  } else if (track === 'real') {
+    if (valor >= realityMax.value) {
+      return 'proibido'
+    }
+    return 'correto'
+  } else {
+    if (valor >= realityMax.value) {
+      return 'proibido'
+    }
+    return 'correto'
+  }
+}
+
+const alertaDeMudancaDeFuncionalidade = () => {
+  alert(
+    'Mudei a forma como as linhas de track funcionam. Caso você queira aumentar o seu track em 1 basta clicar no simbolo de seta no track desejado. Ele fará automaticamente todos os ajustes e verificações adequadas. Caso você queira diminuir basta clicar no simbolo de bola, ele fará todas os ajustes adequados.',
+  )
+}
 
 const atualizarMvpValue = (valor: number) => {
   mvpValue.value = valor
@@ -55,17 +199,6 @@ const atualizarAnomalyLevel = (valor: number, checked: boolean) => {
   }
 }
 
-const intemediator = (tipo: string, numero: number, evento: Event) => {
-  const checked = (evento.target as HTMLInputElement).checked
-  if (tipo === 'anom') {
-    atualizarAnomalyLevel(numero, checked)
-  } else if (tipo === 'comp') {
-    atualizarCompetancyLevel(numero, checked)
-  } else {
-    atualizarRealityLevel(numero, checked)
-  }
-}
-
 const intermediarNumero = (evento: Event) => {
   const numero = (evento.target as HTMLInputElement).value
   return Number(numero)
@@ -87,17 +220,32 @@ const loadInfos = () => {
     if (save['mvp'] !== undefined) {
       atualizarMvpValue(save['mvp'])
     }
+    if (save['mvpUsado'] !== undefined) {
+      atualizarMvpValueUsado(save['mvpUsado'])
+    }
     if (save['probation'] !== undefined) {
       atualizarProbationValue(save['probation'])
+    }
+    if (save['probationUsado'] !== undefined) {
+      atualizarProbationValueUsado(save['probationUsado'])
     }
     if (save['competency'] !== undefined) {
       atualizarCompetancyLevel(save['competency'], true)
     }
+    if (save['competencyMax'] !== undefined) {
+      atualizarCompetencyMax(save['competencyMax'])
+    }
     if (save['reality'] !== undefined) {
       atualizarRealityLevel(save['reality'], true)
     }
+    if (save['realityMax'] !== undefined) {
+      atualizarRealityMax(save['realityMax'])
+    }
     if (save['anomaly'] !== undefined) {
       atualizarAnomalyLevel(save['anomaly'], true)
+    }
+    if (save['anomalyMax'] !== undefined) {
+      atualizarAnomalyMax(save['anomalyMax'])
     }
   } catch (error) {
     console.error('Houve um erro ao carregar as informações', error)
@@ -116,10 +264,15 @@ const salvarInfos = () => {
   const chave = props.chave
   const dict = {
     mvp: mvpValue.value ?? mvpValue,
+    mvpUsado: mvpValueUsado.value ?? mvpValue,
     probation: probationValue.value ?? probationValue,
+    probationUsado: probationValueUsado.value ?? probationValue,
     reality: realityLevel.value ?? realityLevel,
+    realityMax: realityMax.value ?? realityMax,
     anomaly: anomalyLevel.value ?? anomalyLevel,
+    anomalyMax: anomalyMax.value ?? anomalyMax,
     competency: competancyLevel.value ?? competancyLevel,
+    competencyMax: competencyMax.value ?? competencyMax,
   }
   localStorage.setItem(chave, JSON.stringify(dict))
 }
@@ -128,12 +281,26 @@ onMounted(() => {
   loadInfos()
 })
 
-watch([mvpValue, probationValue, realityLevel, anomalyLevel, competancyLevel], () => {
-  salvarInfos()
-})
+watch(
+  [
+    mvpValue,
+    mvpValueUsado,
+    probationValue,
+    probationValueUsado,
+    realityLevel,
+    realityMax,
+    anomalyLevel,
+    anomalyMax,
+    competancyLevel,
+    competencyMax,
+  ],
+  () => {
+    salvarInfos()
+  },
+)
 
 const alertaIMG = computed(() => {
-  return alert
+  return alerta
 })
 
 const medalhistaIMG = computed(() => {
@@ -166,8 +333,6 @@ const playColorido = computed(() => {
     }
   }
 })
-
-const trianguloAzulURL = './src/assets/play-svgrepo-com copy 2.svg'
 </script>
 
 <template>
@@ -235,7 +400,9 @@ const trianguloAzulURL = './src/assets/play-svgrepo-com copy 2.svg'
               <h5>&nbsp;</h5>
             </div>
             <div class="input_container">
-              <img :src="playColorido('Vermelho', false)" />
+              <a @click="modificarTrackLevel('comp', true)">
+                <img :src="playColorido('Vermelho', false)" />
+              </a>
             </div>
           </div>
           <div class="trainee_container">
@@ -249,16 +416,18 @@ const trianguloAzulURL = './src/assets/play-svgrepo-com copy 2.svg'
                 type="checkbox"
                 name=""
                 id=""
-                :checked="competancyLevel > 0"
-                @click="intemediator('comp', 1, $event)"
+                :checked="competancyLevel > 0 || competencyMax < 1"
+                @click.prevent="alertaDeMudancaDeFuncionalidade"
+                :class="descobrirClasseDeMarcacao('comp', 1)"
               />
               <span>-</span>
               <input
                 type="checkbox"
                 name=""
                 id=""
-                :checked="competancyLevel > 1"
-                @click="intemediator('comp', 2, $event)"
+                :checked="competancyLevel > 1 || competencyMax < 2"
+                @click.prevent="alertaDeMudancaDeFuncionalidade"
+                :class="descobrirClasseDeMarcacao('comp', 2)"
               />
               <span>-</span>
             </div>
@@ -273,24 +442,27 @@ const trianguloAzulURL = './src/assets/play-svgrepo-com copy 2.svg'
               <input
                 type="checkbox"
                 class="tagged tagged-A3"
-                :checked="competancyLevel > 2"
-                @click="intemediator('comp', 3, $event)"
+                :checked="competancyLevel > 2 || competencyMax < 3"
+                @click.prevent="alertaDeMudancaDeFuncionalidade"
+                :class="descobrirClasseDeMarcacao('comp', 3)"
               />
               <span>-</span>
               <input
                 type="checkbox"
                 name=""
                 id=""
-                :checked="competancyLevel > 3"
-                @click="intemediator('comp', 4, $event)"
+                :checked="competancyLevel > 3 || competencyMax < 4"
+                @click.prevent="alertaDeMudancaDeFuncionalidade"
+                :class="descobrirClasseDeMarcacao('comp', 4)"
               />
               <span>-</span>
               <input
                 type="checkbox"
                 name=""
                 id=""
-                :checked="competancyLevel > 4"
-                @click="intemediator('comp', 5, $event)"
+                :checked="competancyLevel > 4 || competencyMax < 5"
+                @click.prevent="alertaDeMudancaDeFuncionalidade"
+                :class="descobrirClasseDeMarcacao('comp', 5)"
               />
               <span>-</span>
             </div>
@@ -305,24 +477,27 @@ const trianguloAzulURL = './src/assets/play-svgrepo-com copy 2.svg'
               <input
                 type="checkbox"
                 class="tagged tagged-D4"
-                :checked="competancyLevel > 5"
-                @click="intemediator('comp', 6, $event)"
+                :checked="competancyLevel > 5 || competencyMax < 6"
+                @click.prevent="alertaDeMudancaDeFuncionalidade"
+                :class="descobrirClasseDeMarcacao('comp', 6)"
               />
               <span>-</span>
               <input
                 type="checkbox"
                 name=""
                 id=""
-                :checked="competancyLevel > 6"
-                @click="intemediator('comp', 7, $event)"
+                :checked="competancyLevel > 6 || competencyMax < 7"
+                @click.prevent="alertaDeMudancaDeFuncionalidade"
+                :class="descobrirClasseDeMarcacao('comp', 7)"
               />
               <span>-</span>
               <input
                 type="checkbox"
                 name=""
                 id=""
-                :checked="competancyLevel > 7"
-                @click="intemediator('comp', 8, $event)"
+                :checked="competancyLevel > 7 || competencyMax < 8"
+                @click.prevent="alertaDeMudancaDeFuncionalidade"
+                :class="descobrirClasseDeMarcacao('comp', 8)"
               />
               <span>-</span>
             </div>
@@ -337,24 +512,27 @@ const trianguloAzulURL = './src/assets/play-svgrepo-com copy 2.svg'
               <input
                 type="checkbox"
                 class="tagged tagged-G3"
-                :checked="competancyLevel > 8"
-                @click="intemediator('comp', 9, $event)"
+                :checked="competancyLevel > 8 || competencyMax < 9"
+                @click.prevent="alertaDeMudancaDeFuncionalidade"
+                :class="descobrirClasseDeMarcacao('comp', 9)"
               />
               <span>-</span>
               <input
                 type="checkbox"
                 name=""
                 id=""
-                :checked="competancyLevel > 9"
-                @click="intemediator('comp', 10, $event)"
+                :checked="competancyLevel > 9 || competencyMax < 10"
+                @click.prevent="alertaDeMudancaDeFuncionalidade"
+                :class="descobrirClasseDeMarcacao('comp', 10)"
               />
               <span>-</span>
               <input
                 type="checkbox"
                 name=""
                 id=""
-                :checked="competancyLevel > 10"
-                @click="intemediator('comp', 11, $event)"
+                :checked="competancyLevel > 10 || competencyMax < 11"
+                @click.prevent="alertaDeMudancaDeFuncionalidade"
+                :class="descobrirClasseDeMarcacao('comp', 11)"
               />
               <span>-</span>
             </div>
@@ -369,24 +547,27 @@ const trianguloAzulURL = './src/assets/play-svgrepo-com copy 2.svg'
               <input
                 type="checkbox"
                 class="tagged tagged-J3"
-                :checked="competancyLevel > 11"
-                @click="intemediator('comp', 12, $event)"
+                :checked="competancyLevel > 11 || competencyMax < 12"
+                @click.prevent="alertaDeMudancaDeFuncionalidade"
+                :class="descobrirClasseDeMarcacao('comp', 12)"
               />
               <span>-</span>
               <input
                 type="checkbox"
                 name=""
                 id=""
-                :checked="competancyLevel > 12"
-                @click="intemediator('comp', 13, $event)"
+                :checked="competancyLevel > 12 || competencyMax < 13"
+                @click.prevent="alertaDeMudancaDeFuncionalidade"
+                :class="descobrirClasseDeMarcacao('comp', 13)"
               />
               <span>-</span>
               <input
                 type="checkbox"
                 name=""
                 id=""
-                :checked="competancyLevel > 13"
-                @click="intemediator('comp', 14, $event)"
+                :checked="competancyLevel > 13 || competencyMax < 14"
+                @click.prevent="alertaDeMudancaDeFuncionalidade"
+                :class="descobrirClasseDeMarcacao('comp', 14)"
               />
               <span>-</span>
             </div>
@@ -400,8 +581,9 @@ const trianguloAzulURL = './src/assets/play-svgrepo-com copy 2.svg'
               <input
                 type="checkbox"
                 class="tagged tagged-N3"
-                :checked="competancyLevel > 14"
-                @click="intemediator('comp', 15, $event)"
+                :checked="competancyLevel > 14 || competencyMax < 15"
+                @click.prevent="alertaDeMudancaDeFuncionalidade"
+                :class="descobrirClasseDeMarcacao('comp', 15)"
               />
               <span class="special">-|</span>
             </div>
@@ -410,7 +592,9 @@ const trianguloAzulURL = './src/assets/play-svgrepo-com copy 2.svg'
         <div class="linha_inferior">
           <div class="saida_container">
             <div class="input_container">
-              <img :src="playColorido('Vemelho', true)" />
+              <a @click="modificarTrackLevel('comp', false)">
+                <img :src="playColorido('Vemelho', true)" />
+              </a>
             </div>
             <div class="title_container">
               <h5>&nbsp;</h5>
@@ -422,31 +606,35 @@ const trianguloAzulURL = './src/assets/play-svgrepo-com copy 2.svg'
                 type="checkbox"
                 name=""
                 id=""
-                :checked="competancyLevel > 29"
-                @click="intemediator('comp', 30, $event)"
+                :checked="competancyLevel > 29 || competencyMax < 30"
+                @click.prevent="alertaDeMudancaDeFuncionalidade"
+                :class="descobrirClasseDeMarcacao('comp', 30)"
               />
               <span>-</span>
               <input
                 type="checkbox"
                 name=""
                 id=""
-                :checked="competancyLevel > 28"
-                @click="intemediator('comp', 29, $event)"
+                :checked="competancyLevel > 28 || competencyMax < 29"
+                @click.prevent="alertaDeMudancaDeFuncionalidade"
+                :class="descobrirClasseDeMarcacao('comp', 29)"
               />
               <span>-</span>
               <input
                 type="checkbox"
                 name=""
                 id=""
-                :checked="competancyLevel > 27"
-                @click="intemediator('comp', 28, $event)"
+                :checked="competancyLevel > 27 || competencyMax < 28"
+                @click.prevent="alertaDeMudancaDeFuncionalidade"
+                :class="descobrirClasseDeMarcacao('comp', 28)"
               />
               <span>-</span>
               <input
                 type="checkbox"
                 class="tagged tagged-Y2"
-                :checked="competancyLevel > 26"
-                @click="intemediator('comp', 27, $event)"
+                :checked="competancyLevel > 26 || competencyMax < 27"
+                @click.prevent="alertaDeMudancaDeFuncionalidade"
+                :class="descobrirClasseDeMarcacao('comp', 27)"
               />
               <span>-</span>
             </div>
@@ -462,23 +650,26 @@ const trianguloAzulURL = './src/assets/play-svgrepo-com copy 2.svg'
                 type="checkbox"
                 name=""
                 id=""
-                :checked="competancyLevel > 25"
-                @click="intemediator('comp', 26, $event)"
+                :checked="competancyLevel > 25 || competencyMax < 26"
+                @click.prevent="alertaDeMudancaDeFuncionalidade"
+                :class="descobrirClasseDeMarcacao('comp', 26)"
               />
               <span>-</span>
               <input
                 type="checkbox"
                 name=""
                 id=""
-                :checked="competancyLevel > 24"
-                @click="intemediator('comp', 25, $event)"
+                :checked="competancyLevel > 24 || competencyMax < 25"
+                @click.prevent="alertaDeMudancaDeFuncionalidade"
+                :class="descobrirClasseDeMarcacao('comp', 25)"
               />
               <span>-</span>
               <input
                 type="checkbox"
                 class="tagged tagged-W8"
-                :checked="competancyLevel > 23"
-                @click="intemediator('comp', 24, $event)"
+                :checked="competancyLevel > 23 || competencyMax < 24"
+                @click.prevent="alertaDeMudancaDeFuncionalidade"
+                :class="descobrirClasseDeMarcacao('comp', 24)"
               />
               <span>-</span>
             </div>
@@ -494,23 +685,26 @@ const trianguloAzulURL = './src/assets/play-svgrepo-com copy 2.svg'
                 type="checkbox"
                 name=""
                 id=""
-                :checked="competancyLevel > 22"
-                @click="intemediator('comp', 23, $event)"
+                :checked="competancyLevel > 22 || competencyMax < 23"
+                @click.prevent="alertaDeMudancaDeFuncionalidade"
+                :class="descobrirClasseDeMarcacao('comp', 23)"
               />
               <span>-</span>
               <input
                 type="checkbox"
                 name=""
                 id=""
-                :checked="competancyLevel > 21"
-                @click="intemediator('comp', 22, $event)"
+                :checked="competancyLevel > 21 || competencyMax < 22"
+                @click.prevent="alertaDeMudancaDeFuncionalidade"
+                :class="descobrirClasseDeMarcacao('comp', 22)"
               />
               <span>-</span>
               <input
                 type="checkbox"
                 class="tagged tagged-T3"
-                :checked="competancyLevel > 20"
-                @click="intemediator('comp', 21, $event)"
+                :checked="competancyLevel > 20 || competencyMax < 21"
+                @click.prevent="alertaDeMudancaDeFuncionalidade"
+                :class="descobrirClasseDeMarcacao('comp', 21)"
               />
               <span>-</span>
             </div>
@@ -526,23 +720,26 @@ const trianguloAzulURL = './src/assets/play-svgrepo-com copy 2.svg'
                 type="checkbox"
                 name=""
                 id=""
-                :checked="competancyLevel > 19"
-                @click="intemediator('comp', 20, $event)"
+                :checked="competancyLevel > 19 || competencyMax < 20"
+                @click.prevent="alertaDeMudancaDeFuncionalidade"
+                :class="descobrirClasseDeMarcacao('comp', 20)"
               />
               <span>-</span>
               <input
                 type="checkbox"
                 name=""
                 id=""
-                :checked="competancyLevel > 18"
-                @click="intemediator('comp', 19, $event)"
+                :checked="competancyLevel > 18 || competencyMax < 19"
+                @click.prevent="alertaDeMudancaDeFuncionalidade"
+                :class="descobrirClasseDeMarcacao('comp', 19)"
               />
               <span>-</span>
               <input
                 type="checkbox"
                 class="tagged tagged-Q3"
-                :checked="competancyLevel > 17"
-                @click="intemediator('comp', 18, $event)"
+                :checked="competancyLevel > 17 || competencyMax < 18"
+                @click.prevent="alertaDeMudancaDeFuncionalidade"
+                :class="descobrirClasseDeMarcacao('comp', 18)"
               />
               <span>-</span>
             </div>
@@ -558,16 +755,18 @@ const trianguloAzulURL = './src/assets/play-svgrepo-com copy 2.svg'
                 type="checkbox"
                 name=""
                 id=""
-                :checked="competancyLevel > 16"
-                @click="intemediator('comp', 17, $event)"
+                :checked="competancyLevel > 16 || competencyMax < 17"
+                @click.prevent="alertaDeMudancaDeFuncionalidade"
+                :class="descobrirClasseDeMarcacao('comp', 17)"
               />
               <span>-</span>
               <input
                 type="checkbox"
                 name=""
                 id=""
-                :checked="competancyLevel > 15"
-                @click="intemediator('comp', 16, $event)"
+                :checked="competancyLevel > 15 || competencyMax < 16"
+                @click.prevent="alertaDeMudancaDeFuncionalidade"
+                :class="descobrirClasseDeMarcacao('comp', 16)"
               />
               <span class="special">-|</span>
             </div>
@@ -599,239 +798,273 @@ const trianguloAzulURL = './src/assets/play-svgrepo-com copy 2.svg'
       <h3>Reality</h3>
       <div class="chart_container yellow">
         <div class="linha_superior">
-          <img :src="playColorido('Amarelo', false)" />
+          <a @click="modificarTrackLevel('real', true)">
+            <img :src="playColorido('Amarelo', false)" />
+          </a>
           <input
             type="checkbox"
             class="tagged tagged-C4"
-            :checked="realityLevel > 0"
-            @click="intemediator('real', 1, $event)"
+            :checked="realityLevel > 0 || realityMax < 1"
+            @click.prevent="alertaDeMudancaDeFuncionalidade"
+            :class="descobrirClasseDeMarcacao('real', 1)"
           />
           <span>-</span>
           <input
             type="checkbox"
             name=""
             id=""
-            :checked="realityLevel > 1"
-            @click="intemediator('real', 2, $event)"
+            :checked="realityLevel > 1 || realityMax < 2"
+            @click.prevent="alertaDeMudancaDeFuncionalidade"
+            :class="descobrirClasseDeMarcacao('real', 2)"
           />
           <span>-</span>
           <input
             type="checkbox"
             name=""
             id=""
-            :checked="realityLevel > 2"
-            @click="intemediator('real', 3, $event)"
+            :checked="realityLevel > 2 || realityMax < 3"
+            @click.prevent="alertaDeMudancaDeFuncionalidade"
+            :class="descobrirClasseDeMarcacao('real', 3)"
           />
           <span>-</span>
           <input
             type="checkbox"
             class="tagged tagged-L11"
-            :checked="realityLevel > 3"
-            @click="intemediator('real', 4, $event)"
+            :checked="realityLevel > 3 || realityMax < 4"
+            @click.prevent="alertaDeMudancaDeFuncionalidade"
+            :class="descobrirClasseDeMarcacao('real', 4)"
           />
           <span>-</span>
           <input
             type="checkbox"
             name=""
             id=""
-            :checked="realityLevel > 4"
-            @click="intemediator('real', 5, $event)"
+            :checked="realityLevel > 4 || realityMax < 5"
+            @click.prevent="alertaDeMudancaDeFuncionalidade"
+            :class="descobrirClasseDeMarcacao('real', 5)"
           />
           <span>-</span>
           <input
             type="checkbox"
             name=""
             id=""
-            :checked="realityLevel > 5"
-            @click="intemediator('real', 6, $event)"
+            :checked="realityLevel > 5 || realityMax < 6"
+            @click.prevent="alertaDeMudancaDeFuncionalidade"
+            :class="descobrirClasseDeMarcacao('real', 6)"
           />
           <span>-</span>
           <input
             type="checkbox"
             name=""
             id=""
-            :checked="realityLevel > 6"
-            @click="intemediator('real', 7, $event)"
+            :checked="realityLevel > 6 || realityMax < 7"
+            @click.prevent="alertaDeMudancaDeFuncionalidade"
+            :class="descobrirClasseDeMarcacao('real', 7)"
           />
           <span>-</span>
           <input
             type="checkbox"
             class="tagged tagged-E2"
-            :checked="realityLevel > 7"
-            @click="intemediator('real', 8, $event)"
+            :checked="realityLevel > 7 || realityMax < 8"
+            @click.prevent="alertaDeMudancaDeFuncionalidade"
+            :class="descobrirClasseDeMarcacao('real', 8)"
           />
           <span>-</span>
           <input
             type="checkbox"
             name=""
             id=""
-            :checked="realityLevel > 8"
-            @click="intemediator('real', 9, $event)"
+            :checked="realityLevel > 8 || realityMax < 9"
+            @click.prevent="alertaDeMudancaDeFuncionalidade"
+            :class="descobrirClasseDeMarcacao('real', 9)"
           />
           <span>-</span>
           <input
             type="checkbox"
             class="tagged tagged-O4"
-            :checked="realityLevel > 9"
-            @click="intemediator('real', 10, $event)"
+            :checked="realityLevel > 9 || realityMax < 10"
+            @click.prevent="alertaDeMudancaDeFuncionalidade"
+            :class="descobrirClasseDeMarcacao('real', 10)"
           />
           <span>-</span>
           <input
             type="checkbox"
             name=""
             id=""
-            :checked="realityLevel > 10"
-            @click="intemediator('real', 11, $event)"
+            :checked="realityLevel > 10 || realityMax < 11"
+            @click.prevent="alertaDeMudancaDeFuncionalidade"
+            :class="descobrirClasseDeMarcacao('real', 11)"
           />
           <span>-</span>
           <input
             type="checkbox"
             name=""
             id=""
-            :checked="realityLevel > 11"
-            @click="intemediator('real', 12, $event)"
+            :checked="realityLevel > 11 || realityMax < 12"
+            @click.prevent="alertaDeMudancaDeFuncionalidade"
+            :class="descobrirClasseDeMarcacao('real', 12)"
           />
           <span>-</span>
           <input
             type="checkbox"
             name=""
             id=""
-            :checked="realityLevel > 12"
-            @click="intemediator('real', 13, $event)"
+            :checked="realityLevel > 12 || realityMax < 13"
+            @click.prevent="alertaDeMudancaDeFuncionalidade"
+            :class="descobrirClasseDeMarcacao('real', 13)"
           />
           <span>-</span>
           <input
             type="checkbox"
             class="tagged tagged-T6"
-            :checked="realityLevel > 13"
-            @click="intemediator('real', 14, $event)"
+            :checked="realityLevel > 13 || realityMax < 14"
+            @click.prevent="alertaDeMudancaDeFuncionalidade"
+            :class="descobrirClasseDeMarcacao('real', 14)"
           />
           <span>-</span>
           <input
             type="checkbox"
             name=""
             id=""
-            :checked="realityLevel > 14"
-            @click="intemediator('real', 15, $event)"
+            :checked="realityLevel > 14 || realityMax < 15"
+            @click.prevent="alertaDeMudancaDeFuncionalidade"
+            :class="descobrirClasseDeMarcacao('real', 15)"
           />
           <span class="special special-LS">-|</span>
         </div>
         <div class="linha_inferior">
-          <img :src="playColorido('Amarelo', true)" />
+          <a @click="modificarTrackLevel('real', false)">
+            <img :src="playColorido('Amarelo', true)" />
+          </a>
           <input
             type="checkbox"
             name=""
             id=""
-            :checked="realityLevel > 29"
-            @click="intemediator('real', 30, $event)"
+            :checked="realityLevel > 29 || realityMax < 30"
+            @click.prevent="alertaDeMudancaDeFuncionalidade"
+            :class="descobrirClasseDeMarcacao('real', 30)"
           />
           <span>-</span>
           <input
             type="checkbox"
             name=""
             id=""
-            :checked="realityLevel > 28"
-            @click="intemediator('real', 29, $event)"
+            :checked="realityLevel > 28 || realityMax < 29"
+            @click.prevent="alertaDeMudancaDeFuncionalidade"
+            :class="descobrirClasseDeMarcacao('real', 29)"
           />
           <span>-</span>
           <input
             type="checkbox"
             name=""
             id=""
-            :checked="realityLevel > 27"
-            @click="intemediator('real', 28, $event)"
+            :checked="realityLevel > 27 || realityMax < 28"
+            @click.prevent="alertaDeMudancaDeFuncionalidade"
+            :class="descobrirClasseDeMarcacao('real', 28)"
           />
           <span>-</span>
           <input
             type="checkbox"
             name=""
             id=""
-            :checked="realityLevel > 26"
-            @click="intemediator('real', 27, $event)"
+            :checked="realityLevel > 26 || realityMax < 27"
+            @click.prevent="alertaDeMudancaDeFuncionalidade"
+            :class="descobrirClasseDeMarcacao('real', 27)"
           />
           <span>-</span>
           <input
             type="checkbox"
             class="tagged tagged-E3"
-            :checked="realityLevel > 25"
-            @click="intemediator('real', 26, $event)"
+            :checked="realityLevel > 25 || realityMax < 26"
+            @click.prevent="alertaDeMudancaDeFuncionalidade"
+            :class="descobrirClasseDeMarcacao('real', 26)"
           />
           <span>-</span>
           <input
             type="checkbox"
             name=""
             id=""
-            :checked="realityLevel > 24"
-            @click="intemediator('real', 25, $event)"
+            :checked="realityLevel > 24 || realityMax < 25"
+            @click.prevent="alertaDeMudancaDeFuncionalidade"
+            :class="descobrirClasseDeMarcacao('real', 25)"
           />
           <span>-</span>
           <input
             type="checkbox"
             name=""
             id=""
-            :checked="realityLevel > 23"
-            @click="intemediator('real', 24, $event)"
+            :checked="realityLevel > 23 || realityMax < 24"
+            @click.prevent="alertaDeMudancaDeFuncionalidade"
+            :class="descobrirClasseDeMarcacao('real', 24)"
           />
           <span>-</span>
           <input
             type="checkbox"
             name=""
             id=""
-            :checked="realityLevel > 22"
-            @click="intemediator('real', 23, $event)"
+            :checked="realityLevel > 22 || realityMax < 23"
+            @click.prevent="alertaDeMudancaDeFuncionalidade"
+            :class="descobrirClasseDeMarcacao('real', 23)"
           />
           <span>-</span>
           <input
             type="checkbox"
             class="tagged tagged-H5"
-            :checked="realityLevel > 21"
-            @click="intemediator('real', 22, $event)"
+            :checked="realityLevel > 21 || realityMax < 22"
+            @click.prevent="alertaDeMudancaDeFuncionalidade"
+            :class="descobrirClasseDeMarcacao('real', 22)"
           />
           <span>-</span>
           <input
             type="checkbox"
             name=""
             id=""
-            :checked="realityLevel > 20"
-            @click="intemediator('real', 21, $event)"
+            :checked="realityLevel > 20 || realityMax < 21"
+            @click.prevent="alertaDeMudancaDeFuncionalidade"
+            :class="descobrirClasseDeMarcacao('real', 21)"
           />
           <span>-</span>
           <input
             type="checkbox"
             class="tagged tagged-X3"
-            :checked="realityLevel > 19"
-            @click="intemediator('real', 20, $event)"
+            :checked="realityLevel > 19 || realityMax < 20"
+            @click.prevent="alertaDeMudancaDeFuncionalidade"
+            :class="descobrirClasseDeMarcacao('real', 20)"
           />
           <span>-</span>
           <input
             type="checkbox"
             name=""
             id=""
-            :checked="realityLevel > 18"
-            @click="intemediator('real', 19, $event)"
+            :checked="realityLevel > 18 || realityMax < 19"
+            @click.prevent="alertaDeMudancaDeFuncionalidade"
+            :class="descobrirClasseDeMarcacao('real', 19)"
           />
           <span>-</span>
           <input
             type="checkbox"
             name=""
             id=""
-            :checked="realityLevel > 17"
-            @click="intemediator('real', 18, $event)"
+            :checked="realityLevel > 17 || realityMax < 18"
+            @click.prevent="alertaDeMudancaDeFuncionalidade"
+            :class="descobrirClasseDeMarcacao('real', 18)"
           />
           <span>-</span>
           <input
             type="checkbox"
             name=""
             id=""
-            :checked="realityLevel > 16"
-            @click="intemediator('real', 17, $event)"
+            :checked="realityLevel > 16 || realityMax < 17"
+            @click.prevent="alertaDeMudancaDeFuncionalidade"
+            :class="descobrirClasseDeMarcacao('real', 17)"
           />
           <span>-</span>
           <input
             type="checkbox"
             class="tagged tagged-V2"
-            :checked="realityLevel > 15"
-            @click="intemediator('real', 16, $event)"
+            :checked="realityLevel > 15 || realityMax < 16"
+            @click.prevent="alertaDeMudancaDeFuncionalidade"
+            :class="descobrirClasseDeMarcacao('real', 16)"
           />
           <span class="special special-LI">-|</span>
         </div>
@@ -856,239 +1089,273 @@ const trianguloAzulURL = './src/assets/play-svgrepo-com copy 2.svg'
       <h3>Anomaly</h3>
       <div class="chart_container blue">
         <div class="linha_superior">
-          <img :src="playColorido('Azul', false)" />
+          <a @click="modificarTrackLevel('anom', true)">
+            <img :src="playColorido('Azul', false)" />
+          </a>
           <input
             type="checkbox"
             class="tagged tagged-H4"
-            :checked="anomalyLevel > 0"
-            @click="intemediator('anom', 1, $event)"
+            :checked="anomalyLevel > 0 || anomalyMax < 1"
+            @click.prevent="alertaDeMudancaDeFuncionalidade"
+            :class="descobrirClasseDeMarcacao('anom', 1)"
           />
           <span>-</span>
           <input
             type="checkbox"
             class="tagged tagged-H3"
-            :checked="anomalyLevel > 1"
-            @click="intemediator('anom', 2, $event)"
+            :checked="anomalyLevel > 1 || anomalyMax < 2"
+            @click.prevent="alertaDeMudancaDeFuncionalidade"
+            :class="descobrirClasseDeMarcacao('anom', 2)"
           />
           <span>-</span>
           <input
             type="checkbox"
             name=""
             id=""
-            :checked="anomalyLevel > 2"
-            @click="intemediator('anom', 3, $event)"
+            :checked="anomalyLevel > 2 || anomalyMax < 3"
+            @click.prevent="alertaDeMudancaDeFuncionalidade"
+            :class="descobrirClasseDeMarcacao('anom', 3)"
           />
           <span>-</span>
           <input
             type="checkbox"
             name=""
             id=""
-            :checked="anomalyLevel > 3"
-            @click="intemediator('anom', 4, $event)"
+            :checked="anomalyLevel > 3 || anomalyMax < 4"
+            @click.prevent="alertaDeMudancaDeFuncionalidade"
+            :class="descobrirClasseDeMarcacao('anom', 4)"
           />
           <span>-</span>
           <input
             type="checkbox"
             class="tagged tagged-U2"
-            :checked="anomalyLevel > 4"
-            @click="intemediator('anom', 5, $event)"
+            :checked="anomalyLevel > 4 || anomalyMax < 5"
+            @click.prevent="alertaDeMudancaDeFuncionalidade"
+            :class="descobrirClasseDeMarcacao('anom', 5)"
           />
           <span>-</span>
           <input
             type="checkbox"
             name=""
             id=""
-            :checked="anomalyLevel > 5"
-            @click="intemediator('anom', 6, $event)"
+            :checked="anomalyLevel > 5 || anomalyMax < 6"
+            @click.prevent="alertaDeMudancaDeFuncionalidade"
+            :class="descobrirClasseDeMarcacao('anom', 6)"
           />
           <span>-</span>
           <input
             type="checkbox"
             class="tagged tagged-X2"
-            :checked="anomalyLevel > 6"
-            @click="intemediator('anom', 7, $event)"
+            :checked="anomalyLevel > 6 || anomalyMax < 7"
+            @click.prevent="alertaDeMudancaDeFuncionalidade"
+            :class="descobrirClasseDeMarcacao('anom', 7)"
           />
           <span>-</span>
           <input
             type="checkbox"
             name=""
             id=""
-            :checked="anomalyLevel > 7"
-            @click="intemediator('anom', 8, $event)"
+            :checked="anomalyLevel > 7 || anomalyMax < 8"
+            @click.prevent="alertaDeMudancaDeFuncionalidade"
+            :class="descobrirClasseDeMarcacao('anom', 8)"
           />
           <span>-</span>
           <input
             type="checkbox"
             name=""
             id=""
-            :checked="anomalyLevel > 8"
-            @click="intemediator('anom', 9, $event)"
+            :checked="anomalyLevel > 8 || anomalyMax < 9"
+            @click.prevent="alertaDeMudancaDeFuncionalidade"
+            :class="descobrirClasseDeMarcacao('anom', 9)"
           />
           <span>-</span>
           <input
             type="checkbox"
             name=""
             id=""
-            :checked="anomalyLevel > 9"
-            @click="intemediator('anom', 10, $event)"
+            :checked="anomalyLevel > 9 || anomalyMax < 10"
+            @click.prevent="alertaDeMudancaDeFuncionalidade"
+            :class="descobrirClasseDeMarcacao('anom', 10)"
           />
           <span>-</span>
           <input
             type="checkbox"
             class="tagged tagged-N1"
-            :checked="anomalyLevel > 10"
-            @click="intemediator('anom', 11, $event)"
+            :checked="anomalyLevel > 10 || anomalyMax < 11"
+            @click.prevent="alertaDeMudancaDeFuncionalidade"
+            :class="descobrirClasseDeMarcacao('anom', 11)"
           />
           <span>-</span>
           <input
             type="checkbox"
             name=""
             id=""
-            :checked="anomalyLevel > 11"
-            @click="intemediator('anom', 12, $event)"
+            :checked="anomalyLevel > 11 || anomalyMax < 12"
+            @click.prevent="alertaDeMudancaDeFuncionalidade"
+            :class="descobrirClasseDeMarcacao('anom', 12)"
           />
           <span>-</span>
           <input
             type="checkbox"
             class="tagged tagged-Q2"
-            :checked="anomalyLevel > 12"
-            @click="intemediator('anom', 13, $event)"
+            :checked="anomalyLevel > 12 || anomalyMax < 13"
+            @click.prevent="alertaDeMudancaDeFuncionalidade"
+            :class="descobrirClasseDeMarcacao('anom', 13)"
           />
           <span>-</span>
           <input
             type="checkbox"
             name=""
             id=""
-            :checked="anomalyLevel > 13"
-            @click="intemediator('anom', 14, $event)"
+            :checked="anomalyLevel > 13 || anomalyMax < 14"
+            @click.prevent="alertaDeMudancaDeFuncionalidade"
+            :class="descobrirClasseDeMarcacao('anom', 14)"
           />
           <span>-</span>
           <input
             type="checkbox"
             name=""
             id=""
-            :checked="anomalyLevel > 14"
-            @click="intemediator('anom', 15, $event)"
+            :checked="anomalyLevel > 14 || anomalyMax < 15"
+            @click.prevent="alertaDeMudancaDeFuncionalidade"
+            :class="descobrirClasseDeMarcacao('anom', 15)"
           />
           <span class="special special-LS">-|</span>
         </div>
         <div class="linha_inferior">
-          <img :src="playColorido('Azul', true)" />
+          <a @click="modificarTrackLevel('anom', false)">
+            <img :src="playColorido('Azul', true)" />
+          </a>
           <input
             type="checkbox"
             name=""
             id=""
-            :checked="anomalyLevel > 29"
-            @click="intemediator('anom', 30, $event)"
+            :checked="anomalyLevel > 29 || anomalyMax < 30"
+            @click.prevent="alertaDeMudancaDeFuncionalidade"
+            :class="descobrirClasseDeMarcacao('anom', 30)"
           />
           <span>-</span>
           <input
             type="checkbox"
             name=""
             id=""
-            :checked="anomalyLevel > 28"
-            @click="intemediator('anom', 29, $event)"
+            :checked="anomalyLevel > 28 || anomalyMax < 29"
+            @click.prevent="alertaDeMudancaDeFuncionalidade"
+            :class="descobrirClasseDeMarcacao('anom', 29)"
           />
           <span>-</span>
           <input
             type="checkbox"
             name=""
             id=""
-            :checked="anomalyLevel > 27"
-            @click="intemediator('anom', 28, $event)"
+            :checked="anomalyLevel > 27 || anomalyMax < 28"
+            @click.prevent="alertaDeMudancaDeFuncionalidade"
+            :class="descobrirClasseDeMarcacao('anom', 28)"
           />
           <span>-</span>
           <input
             type="checkbox"
             name=""
             id=""
-            :checked="anomalyLevel > 26"
-            @click="intemediator('anom', 27, $event)"
+            :checked="anomalyLevel > 26 || anomalyMax < 27"
+            @click.prevent="alertaDeMudancaDeFuncionalidade"
+            :class="descobrirClasseDeMarcacao('anom', 27)"
           />
           <span>-</span>
           <input
             type="checkbox"
             name=""
             id=""
-            :checked="anomalyLevel > 25"
-            @click="intemediator('anom', 26, $event)"
+            :checked="anomalyLevel > 25 || anomalyMax < 26"
+            @click.prevent="alertaDeMudancaDeFuncionalidade"
+            :class="descobrirClasseDeMarcacao('anom', 26)"
           />
           <span>-</span>
           <input
             type="checkbox"
             name=""
             id=""
-            :checked="anomalyLevel > 24"
-            @click="intemediator('anom', 25, $event)"
+            :checked="anomalyLevel > 24 || anomalyMax < 25"
+            @click.prevent="alertaDeMudancaDeFuncionalidade"
+            :class="descobrirClasseDeMarcacao('anom', 25)"
           />
           <span>-</span>
           <input
             type="checkbox"
             name=""
             id=""
-            :checked="anomalyLevel > 23"
-            @click="intemediator('anom', 24, $event)"
+            :checked="anomalyLevel > 23 || anomalyMax < 24"
+            @click.prevent="alertaDeMudancaDeFuncionalidade"
+            :class="descobrirClasseDeMarcacao('anom', 24)"
           />
           <span>-</span>
           <input
             type="checkbox"
             class="tagged tagged-A7"
-            :checked="anomalyLevel > 22"
-            @click="intemediator('anom', 23, $event)"
+            :checked="anomalyLevel > 22 || anomalyMax < 23"
+            @click.prevent="alertaDeMudancaDeFuncionalidade"
+            :class="descobrirClasseDeMarcacao('anom', 23)"
           />
           <span>-</span>
           <input
             type="checkbox"
             name=""
             id=""
-            :checked="anomalyLevel > 21"
-            @click="intemediator('anom', 22, $event)"
+            :checked="anomalyLevel > 21 || anomalyMax < 22"
+            @click.prevent="alertaDeMudancaDeFuncionalidade"
+            :class="descobrirClasseDeMarcacao('anom', 22)"
           />
           <span>-</span>
           <input
             type="checkbox"
             name=""
             id=""
-            :checked="anomalyLevel > 20"
-            @click="intemediator('anom', 21, $event)"
+            :checked="anomalyLevel > 20 || anomalyMax < 21"
+            @click.prevent="alertaDeMudancaDeFuncionalidade"
+            :class="descobrirClasseDeMarcacao('anom', 21)"
           />
           <span>-</span>
           <input
             type="checkbox"
             name=""
             id=""
-            :checked="anomalyLevel > 19"
-            @click="intemediator('anom', 20, $event)"
+            :checked="anomalyLevel > 19 || anomalyMax < 20"
+            @click.prevent="alertaDeMudancaDeFuncionalidade"
+            :class="descobrirClasseDeMarcacao('anom', 20)"
           />
           <span>-</span>
           <input
             type="checkbox"
             class="tagged tagged-G8"
-            :checked="anomalyLevel > 18"
-            @click="intemediator('anom', 19, $event)"
+            :checked="anomalyLevel > 18 || anomalyMax < 19"
+            @click.prevent="alertaDeMudancaDeFuncionalidade"
+            :class="descobrirClasseDeMarcacao('anom', 19)"
           />
           <span>-</span>
           <input
             type="checkbox"
             name=""
             id=""
-            :checked="anomalyLevel > 17"
-            @click="intemediator('anom', 18, $event)"
+            :checked="anomalyLevel > 17 || anomalyMax < 18"
+            @click.prevent="alertaDeMudancaDeFuncionalidade"
+            :class="descobrirClasseDeMarcacao('anom', 18)"
           />
           <span>-</span>
           <input
             type="checkbox"
             class="tagged tagged-L10"
-            :checked="anomalyLevel > 16"
-            @click="intemediator('anom', 17, $event)"
+            :checked="anomalyLevel > 16 || anomalyMax < 17"
+            @click.prevent="alertaDeMudancaDeFuncionalidade"
+            :class="descobrirClasseDeMarcacao('anom', 17)"
           />
           <span>-</span>
           <input
             type="checkbox"
             name=""
             id=""
-            :checked="anomalyLevel > 15"
-            @click="intemediator('anom', 16, $event)"
+            :checked="anomalyLevel > 15 || anomalyMax < 16"
+            @click.prevent="alertaDeMudancaDeFuncionalidade"
+            :class="descobrirClasseDeMarcacao('anom', 16)"
           />
           <span class="special special-LI">-|</span>
         </div>
@@ -1351,6 +1618,7 @@ const trianguloAzulURL = './src/assets/play-svgrepo-com copy 2.svg'
       img {
         height: 50px;
         width: 50px;
+        cursor: pointer;
       }
       .entrada_container {
         margin-right: 5px;
@@ -1360,7 +1628,7 @@ const trianguloAzulURL = './src/assets/play-svgrepo-com copy 2.svg'
         display: flex;
         align-items: center;
 
-        input {
+        .correto {
           height: 50px;
           width: 50px;
           border: none;
@@ -1368,7 +1636,6 @@ const trianguloAzulURL = './src/assets/play-svgrepo-com copy 2.svg'
           background-color: rgba($color: #ff0000, $alpha: 0.4);
           border-radius: 8px;
           appearance: none;
-          cursor: pointer;
 
           &:checked {
             background-color: rgba($color: #ff00ff, $alpha: 0.4);
@@ -1385,6 +1652,32 @@ const trianguloAzulURL = './src/assets/play-svgrepo-com copy 2.svg'
             }
           }
         }
+
+        .proibido {
+          height: 50px;
+          width: 50px;
+          border: none;
+          outline: none;
+          background-color: rgba($color: #ff0000, $alpha: 0.4);
+          border-radius: 8px;
+          appearance: none;
+
+          &:checked {
+            background-color: rgba($color: #808080, $alpha: 0.4);
+            position: relative;
+
+            &::after {
+              content: 'X';
+              color: white;
+              font-size: 30px;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+            }
+          }
+        }
+
         .tagged {
           position: relative;
 
@@ -1477,6 +1770,7 @@ const trianguloAzulURL = './src/assets/play-svgrepo-com copy 2.svg'
       img {
         height: 50px;
         width: 50px;
+        cursor: pointer;
       }
 
       .saida_container {
@@ -1486,7 +1780,8 @@ const trianguloAzulURL = './src/assets/play-svgrepo-com copy 2.svg'
       .input_container {
         display: flex;
         align-items: center;
-        input {
+
+        .correto {
           height: 50px;
           width: 50px;
           border: none;
@@ -1494,7 +1789,6 @@ const trianguloAzulURL = './src/assets/play-svgrepo-com copy 2.svg'
           background-color: rgba($color: #ff0000, $alpha: 0.4);
           border-radius: 8px;
           appearance: none;
-          cursor: pointer;
 
           &:checked {
             background-color: rgba($color: #ff00ff, $alpha: 0.4);
@@ -1502,6 +1796,31 @@ const trianguloAzulURL = './src/assets/play-svgrepo-com copy 2.svg'
 
             &::after {
               content: '✔';
+              color: white;
+              font-size: 30px;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+            }
+          }
+        }
+
+        .proibido {
+          height: 50px;
+          width: 50px;
+          border: none;
+          outline: none;
+          background-color: rgba($color: #ff0000, $alpha: 0.4);
+          border-radius: 8px;
+          appearance: none;
+
+          &:checked {
+            background-color: rgba($color: #808080, $alpha: 0.4);
+            position: relative;
+
+            &::after {
+              content: 'X';
               color: white;
               font-size: 30px;
               position: absolute;
@@ -1661,7 +1980,7 @@ const trianguloAzulURL = './src/assets/play-svgrepo-com copy 2.svg'
         align-items: center;
       }
 
-      input {
+      .correto {
         height: 50px;
         width: 50px;
         border: none;
@@ -1669,7 +1988,6 @@ const trianguloAzulURL = './src/assets/play-svgrepo-com copy 2.svg'
         background-color: rgba($color: #ff0000, $alpha: 0.4);
         border-radius: 8px;
         appearance: none;
-        cursor: pointer;
 
         &:checked {
           background-color: rgba($color: #ff00ff, $alpha: 0.4);
@@ -1677,6 +1995,31 @@ const trianguloAzulURL = './src/assets/play-svgrepo-com copy 2.svg'
 
           &::after {
             content: '✔';
+            color: white;
+            font-size: 30px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          }
+        }
+      }
+
+      .proibido {
+        height: 50px;
+        width: 50px;
+        border: none;
+        outline: none;
+        background-color: rgba($color: #ff0000, $alpha: 0.4);
+        border-radius: 8px;
+        appearance: none;
+
+        &:checked {
+          background-color: rgba($color: #808080, $alpha: 0.4);
+          position: relative;
+
+          &::after {
+            content: 'X';
             color: white;
             font-size: 30px;
             position: absolute;
@@ -1793,7 +2136,11 @@ const trianguloAzulURL = './src/assets/play-svgrepo-com copy 2.svg'
     }
 
     .yellow {
-      input {
+      .correto {
+        background-color: rgba($color: #ffff00, $alpha: 0.4);
+      }
+
+      .proibido {
         background-color: rgba($color: #ffff00, $alpha: 0.4);
       }
 
@@ -1809,7 +2156,11 @@ const trianguloAzulURL = './src/assets/play-svgrepo-com copy 2.svg'
     }
 
     .blue {
-      input {
+      .correto {
+        background-color: rgba($color: #0000ff, $alpha: 0.4);
+      }
+
+      .proibido {
         background-color: rgba($color: #0000ff, $alpha: 0.4);
       }
 
