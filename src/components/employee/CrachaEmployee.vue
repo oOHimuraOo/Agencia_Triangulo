@@ -15,6 +15,16 @@ interface Props {
 const props = defineProps<Props>()
 
 const profile = ref('')
+const nomeValue = ref('')
+const pronomeValue = ref('')
+
+const atualizarNomePronome = (pro: boolean, valor: string) => {
+  if (pro) {
+    pronomeValue.value = valor
+  } else {
+    nomeValue.value = valor
+  }
+}
 
 const loadInfos = () => {
   if (!props.chave) {
@@ -53,13 +63,55 @@ const salvarInfos = () => {
   localStorage.setItem(chave, JSON.stringify(dict))
 }
 
+const verificarSeNomePronome = () => {
+  console.log('nana')
+  const memoria1 = localStorage.getItem('Character Name')
+  const memoria2 = localStorage.getItem('Pronouns')
+  if (!memoria1) {
+    return
+  }
+
+  if (!memoria2) {
+    return
+  }
+
+  try {
+    const save1 = JSON.parse(memoria1)
+    const save2 = JSON.parse(memoria2)
+
+    if (save1['texto'] !== undefined) {
+      atualizarNomePronome(false, save1['texto'])
+    }
+    if (save2['texto'] !== undefined) {
+      atualizarNomePronome(true, save2['texto'])
+    }
+  } catch (error) {
+    console.error('Houve um erro com a coleta de informações', error)
+  }
+}
+
 onMounted(() => {
   loadInfos()
+  verificarSeNomePronome()
 })
 
 watch([profile], () => {
   salvarInfos()
 })
+
+watch(
+  () => props.nome,
+  (novoNome) => {
+    atualizarNomePronome(false, novoNome)
+  },
+)
+
+watch(
+  () => props.pronome,
+  (novoPronome) => {
+    atualizarNomePronome(true, novoPronome)
+  },
+)
 
 const atualizarProfile = (value: string) => {
   profile.value = value
@@ -91,14 +143,6 @@ const cameraIMG = computed(() => {
   return camera
 })
 
-const nome = computed(() => {
-  return props.nome
-})
-
-const pronome = computed(() => {
-  return props.pronome
-})
-
 const triangleLogoIMG = computed(() => {
   return logo
 })
@@ -128,12 +172,12 @@ const triangleLogoIMG = computed(() => {
     <div class="text_container">
       <div class="name_container">
         <span>Name</span>
-        <p>{{ nome }}</p>
+        <p>{{ nomeValue }}</p>
       </div>
       <div class="extra_container">
         <div class="pronouns_container">
           <span>Pronouns</span>
-          <p>{{ pronome }}</p>
+          <p>{{ pronomeValue }}</p>
         </div>
         <img :src="triangleLogoIMG" alt="" />
       </div>
