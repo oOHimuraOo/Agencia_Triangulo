@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, onMounted, ref, watch } from 'vue'
+import triangulo from '../../assets/TrianguloVermelho50.png'
 
 interface Props {
   skill: string
@@ -7,7 +8,6 @@ interface Props {
 }
 
 const props = defineProps<Props>()
-const tringuloVermelho = './src/assets/TrianguloVermelho50.png'
 
 const level = ref(0)
 const max = ref(9)
@@ -90,7 +90,7 @@ const skill = computed(() => {
       <input
         type="number"
         id="max"
-        :style="{ backgroundImage: `url('${tringuloVermelho}')` }"
+        :style="{ backgroundImage: `url('${triangulo}')` }"
         :value="max"
         readonly
       />

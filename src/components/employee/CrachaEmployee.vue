@@ -4,7 +4,7 @@ import barcode from '../../assets/bar-code-svgrepo-com.svg'
 import horizontal from '../../assets/horizontal-rule-svgrepo-com.svg'
 import camera from '../../assets/camera-svgrepo-com.svg'
 import prof from '../../assets/profile-round-1342-svgrepo-com.svg'
-import logo from '../../assets/triangleLogo.png'
+import logo from '../../assets/Para Himura.png'
 
 interface Props {
   nome: string
