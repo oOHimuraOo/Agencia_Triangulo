@@ -2,12 +2,32 @@
 import ChartTittleCell3 from './cells/reality/ChartTittleCell3.vue'
 import SelectInput from './inputs/SelectInput.vue'
 import ChartPointsCell from './cells/reality/ChartPointsCell.vue'
+import questionArea from './questions/QuestionArea.vue'
+import dados, { type realityData } from '../others/json/jsonData'
 
 interface Props {
   selected: string
 }
 
 const props = defineProps<Props>()
+
+const carregarPeguntas = (valor: number) => {
+  const reality = props.selected
+  const data: realityData = dados.reality
+
+  if (valor === 1) {
+    return data[reality]?.RelationshipMatrix.questions[1] || ''
+  } else if (valor === 2) {
+    return data[reality]?.RelationshipMatrix.questions[2] || ''
+  } else {
+    return data[reality]?.RelationshipMatrix.questions[3] || ''
+  }
+}
+
+const gerarChave = (valor: number) => {
+  const novaChave = 'rmq' + String(valor)
+  return novaChave
+}
 </script>
 
 <template>
@@ -16,6 +36,18 @@ const props = defineProps<Props>()
     <div>
       <SelectInput tipo="Real" :viewer="true" :selected="props.selected" />
     </div>
+  </div>
+  <div class="relationship_questions_container">
+    <h3>Relationship Matrix Questions:</h3>
+    <ul>
+      <li v-for="(x, index) in Array.from({ length: 3 })" :key="index">
+        <questionArea
+          :chave="gerarChave(index)"
+          :number="12 + index"
+          :pergunta="carregarPeguntas(index + 1)"
+        />
+      </li>
+    </ul>
   </div>
   <div class="anomaly_ablities">
     <div class="ul">
@@ -159,7 +191,15 @@ const props = defineProps<Props>()
     }
   }
 }
-
+.relationship_questions_container {
+  h3 {
+    color: rgba($color: #ffff00, $alpha: 0.7);
+    font-size: 22px;
+    font-family: sans-serif;
+    font-weight: bold;
+    margin-bottom: 16px;
+  }
+}
 .body {
   display: flex;
   height: 250px;

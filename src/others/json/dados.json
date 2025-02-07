@@ -884,7 +884,12 @@
         "c": "Where is your dream vacation destination?"
       },
       "RelationshipMatrix": {
-        "text": "You have three core Relationships that are your anchors to society. Identify them by answering the questions in your Relationship Matrix. Once every Relationship has been identified, assign each to another <Agent/player> at the table. When each character is present in a scene, they will be portrayed by the assigned <Agent/player>. Give the Relationship you’re closest to 6 Connection. Give the other two 3 Connection."
+        "text": "You have three core Relationships that are your anchors to society. Identify them by answering the questions in your Relationship Matrix. Once every Relationship has been identified, assign each to another <Agent/player> at the table. When each character is present in a scene, they will be portrayed by the assigned <Agent/player>. Give the Relationship you’re closest to 6 Connection. Give the other two 3 Connection.",
+        "questions": {
+          "1": "Who would gain custody of your dependent if you were gone?",
+          "2": "Who misses the freedom you used to have?",
+          "3": "Who is your Dependent always excited to spend time with?"
+        }
       },
       "Page": "80"
     },
@@ -904,7 +909,12 @@
         "c": "How do you celebrate victories?"
       },
       "RelationshipMatrix": {
-        "text": "You have three core Relationships that are your anchors to society. Identify them by answering the questions in your Relationship Matrix. Once every Relationship has been identified, assign each to another <Agent/player> at the table. When each character is present in a scene, they will be portrayed by the assigned <Agent/player>. Give the Relationship you’re closest to 6 Connection. Give the other two 3 Connection."
+        "text": "You have three core Relationships that are your anchors to society. Identify them by answering the questions in your Relationship Matrix. Once every Relationship has been identified, assign each to another <Agent/player> at the table. When each character is present in a scene, they will be portrayed by the assigned <Agent/player>. Give the Relationship you’re closest to 6 Connection. Give the other two 3 Connection.",
+        "questions": {
+          "1": "Who is your other boss?",
+          "2": "Who cares the most about your health?",
+          "3": "Who are you in charge of?"
+        }
       },
       "Page": "82"
     },
@@ -924,7 +934,12 @@
         "c": "If you were to run a charitable organization, what cause would it champion?"
       },
       "RelationshipMatrix": {
-        "text": "You have three core Relationships that are your anchors to society. Identify them by answering the questions in your Relationship Matrix. Once every Relationship has been identified, assign each to another <Agent/player> at the table. When each character is present in a scene, they will be portrayed by the assigned <Agent/player>. Give the Relationship you’re closest to 6 Connection. Give the other two 3 Connection."
+        "text": "You have three core Relationships that are your anchors to society. Identify them by answering the questions in your Relationship Matrix. Once every Relationship has been identified, assign each to another <Agent/player> at the table. When each character is present in a scene, they will be portrayed by the assigned <Agent/player>. Give the Relationship you’re closest to 6 Connection. Give the other two 3 Connection.",
+        "questions": {
+          "1": "Who knows about your pursuer?",
+          "2": "Who would be most hurt to find out the truth?",
+          "3": "Who is obsessed with the new you?"
+        }
       },
       "Page": "84"
     },
@@ -944,7 +959,12 @@
         "c": "What animal do you feel best represents you?"
       },
       "RelationshipMatrix": {
-        "text": "You have three core Relationships that are your anchors to society. Identify them by answering the questions in your Relationship Matrix. Once every Relationship has been identified, assign each to another <Agent/player> at the table. When each character is present in a scene, they will be portrayed by the assigned <Agent/player>. Give the Relationship you’re closest to 6 Connection. Give the other two 3 Connection."
+        "text": "You have three core Relationships that are your anchors to society. Identify them by answering the questions in your Relationship Matrix. Once every Relationship has been identified, assign each to another <Agent/player> at the table. When each character is present in a scene, they will be portrayed by the assigned <Agent/player>. Give the Relationship you’re closest to 6 Connection. Give the other two 3 Connection.",
+        "questions": {
+          "1": "Who is your manager?",
+          "2": "Who is your biggest rival?",
+          "3": "Who remains from your former life?"
+        }
       },
       "Page": "86"
     },
@@ -964,7 +984,12 @@
         "c": "What is the first piece of visual art you fell in love with?"
       },
       "RelationshipMatrix": {
-        "text": "You have three core Relationships that are your anchors to society. Identify them by answering the questions in your Relationship Matrix. Once every Relationship has been identified, assign each to another <Agent/player> at the table. When each character is present in a scene, they will be portrayed by the assigned <Agent/player>. Give the Relationship you’re closest to 6 Connection. Give the other two 3 Connection."
+        "text": "You have three core Relationships that are your anchors to society. Identify them by answering the questions in your Relationship Matrix. Once every Relationship has been identified, assign each to another <Agent/player> at the table. When each character is present in a scene, they will be portrayed by the assigned <Agent/player>. Give the Relationship you’re closest to 6 Connection. Give the other two 3 Connection.",
+        "questions": {
+          "1": "Who do you rely on for shelter?",
+          "2": "Who do you owe the most money to?",
+          "3": "For whom do you most want to get it together?"
+        }
       },
       "Page": "88"
     },
@@ -984,7 +1009,12 @@
         "c": "If you had an extra day in the week, how would you use it?"
       },
       "RelationshipMatrix": {
-        "text": "You have three core Relationships that are your anchors to society. Identify them by answering the questions in your Relationship Matrix. Once every Relationship has been identified, assign each to another <Agent/player> at the table. When each character is present in a scene, they will be portrayed by the assigned <Agent/player>. Give the Relationship you’re closest to 6 Connection. Give the other two 3 Connection."
+        "text": "You have three core Relationships that are your anchors to society. Identify them by answering the questions in your Relationship Matrix. Once every Relationship has been identified, assign each to another <Agent/player> at the table. When each character is present in a scene, they will be portrayed by the assigned <Agent/player>. Give the Relationship you’re closest to 6 Connection. Give the other two 3 Connection.",
+        "questions": {
+          "1": "Who is your favorite teacher?",
+          "2": "Who relies on your unusual perspective?",
+          "3": "Who loves to take advantage of your naivete?"
+        }
       },
       "Page": "90"
     },
@@ -1004,7 +1034,12 @@
         "c": "What three things would you bring with you to a deserted island?"
       },
       "RelationshipMatrix": {
-        "text": "You have three core Relationships that are your anchors to society. Identify them by answering the questions in your Relationship Matrix. Once every Relationship has been identified, assign each to another <Agent/player> at the table. When each character is present in a scene, they will be portrayed by the assigned <Agent/player>. Give the Relationship you’re closest to 6 Connection. Give the other two 3 Connection."
+        "text": "You have three core Relationships that are your anchors to society. Identify them by answering the questions in your Relationship Matrix. Once every Relationship has been identified, assign each to another <Agent/player> at the table. When each character is present in a scene, they will be portrayed by the assigned <Agent/player>. Give the Relationship you’re closest to 6 Connection. Give the other two 3 Connection.", 
+        "questions": {
+          "1": "Who is your longest-term situationship?",
+          "2": "Who has never, ever found you attractive?",
+          "3": "Who are you oblivious to the romantic possibilities with?"
+        }
       },
       "Page": "92"
     },
@@ -1024,7 +1059,12 @@
         "c": "What’s your favorite karaoke song?"
       },
       "RelationshipMatrix": {
-        "text": "You have three core Relationships that are your anchors to society. Identify them by answering the questions in your Relationship Matrix. Once every Relationship has been identified, assign each to another <Agent/player> at the table. When each character is present in a scene, they will be portrayed by the assigned <Agent/player>. Give the Relationship you’re closest to 6 Connection. Give the other two 3 Connection."
+        "text": "You have three core Relationships that are your anchors to society. Identify them by answering the questions in your Relationship Matrix. Once every Relationship has been identified, assign each to another <Agent/player> at the table. When each character is present in a scene, they will be portrayed by the assigned <Agent/player>. Give the Relationship you’re closest to 6 Connection. Give the other two 3 Connection.",
+        "questions": {
+          "1": "Who is your successor?",
+          "2": "Who threatens your organization's continued existence?",
+          "3": "Who can never even remember your organization's name?"
+        }
       },
       "Page": "94"
     },
@@ -1044,7 +1084,12 @@
         "c": "What is your favorite idiom?"
       },
       "RelationshipMatrix": {
-        "text": "You have three core Relationships that are your anchors to society. Identify them by answering the questions in your Relationship Matrix. Once every Relationship has been identified, assign each to another <Agent/player> at the table. When each character is present in a scene, they will be portrayed by the assigned <Agent/player>. Give the Relationship you’re closest to 6 Connection. Give the other two 3 Connection."
+        "text": "You have three core Relationships that are your anchors to society. Identify them by answering the questions in your Relationship Matrix. Once every Relationship has been identified, assign each to another <Agent/player> at the table. When each character is present in a scene, they will be portrayed by the assigned <Agent/player>. Give the Relationship you’re closest to 6 Connection. Give the other two 3 Connection.",
+        "questions": {
+          "1": "Who came from the same place you did?",
+          "2": "Who taught you how to hide among regular people?",
+          "3": "Who do you wish to teach more about your first life?"
+        }
       },
       "Page": "96"
     }

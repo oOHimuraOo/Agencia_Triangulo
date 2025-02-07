@@ -67,6 +67,9 @@ const gerarChave = (valor: number) => {
         <MarkerInput skill="Subtlety" chave="Subtlety" />
       </li>
     </ul>
+    <div class="title_container">
+      <h3>Onboarding Questions</h3>
+    </div>
     <ul>
       <li v-for="(x, index) in Array.from({ length: 3 })" :key="index">
         <questionArea
@@ -93,6 +96,13 @@ const gerarChave = (valor: number) => {
       font-size: 38px;
       font-weight: bold;
       padding: 8px;
+    }
+
+    h3 {
+      color: rgba($color: #ffff00, $alpha: 0.7);
+      font-family: sans-serif;
+      font-weight: bold;
+      font-size: 28px;
     }
 
     img {

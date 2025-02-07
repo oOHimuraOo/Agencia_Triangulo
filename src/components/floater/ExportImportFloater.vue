@@ -77,6 +77,9 @@ const gerarExport = () => {
     obq0: localStorage.getItem('obq0') || '',
     obq1: localStorage.getItem('obq1') || '',
     obq2: localStorage.getItem('obq2') || '',
+    rmq0: localStorage.getItem('rmq0') || '',
+    rmq1: localStorage.getItem('rmq1') || '',
+    rmq2: localStorage.getItem('rmq2') || '',
   }
   const stringfied = JSON.stringify(dict)
   copiarParaClipboard(stringfied)
@@ -275,6 +278,15 @@ const implementarNovoSave = (valor: string) => {
   }
   if (save['obq2'] !== undefined) {
     localStorage.setItem('obq2', save['obq2'])
+  }
+  if (save['rmq0'] !== undefined) {
+    localStorage.setItem('rmq0', save['rmq0'])
+  }
+  if (save['rmq1'] !== undefined) {
+    localStorage.setItem('rmq1', save['rmq1'])
+  }
+  if (save['rmq2'] !== undefined) {
+    localStorage.setItem('rmq2', save['rmq2'])
   }
 
   recarregarPagina()

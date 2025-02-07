@@ -95,8 +95,15 @@ export interface onboardingQuestions {
   c: string
 }
 
+export interface relationshipQuestions {
+  1: string
+  2: string
+  3: string
+}
+
 export interface relatioshipMatrix {
   text: string
+  questions: relationshipQuestions
 }
 
 export interface realityData {
