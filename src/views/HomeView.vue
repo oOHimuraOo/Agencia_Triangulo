@@ -78,7 +78,7 @@ const quandoNovoAgencyStanding = (valor: string) => {
         <TriggersComponent :competency="selectedCompetency" :reality="selectedReality" />
       </div>
       <div class="right_bar">
-        <QualityAssuranceComponent />
+        <QualityAssuranceComponent :reality-selected="selectedReality"/>
       </div>
     </div>
     <div class="worklife">

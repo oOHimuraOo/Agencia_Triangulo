@@ -74,6 +74,9 @@ const gerarExport = () => {
     emergency1: localStorage.getItem('emergency1') || '',
     salary1: localStorage.getItem('salary1') || '',
     work1: localStorage.getItem('work1') || '',
+    obq0: localStorage.getItem('obq0') || '',
+    obq1: localStorage.getItem('obq1') || '',
+    obq2: localStorage.getItem('obq2') || '',
   }
   const stringfied = JSON.stringify(dict)
   copiarParaClipboard(stringfied)
@@ -263,6 +266,15 @@ const implementarNovoSave = (valor: string) => {
   }
   if (save['work1'] !== undefined) {
     localStorage.setItem('work1', save['work1'])
+  }
+  if (save['obq0'] !== undefined) {
+    localStorage.setItem('obq0', save['obq0'])
+  }
+  if (save['obq1'] !== undefined) {
+    localStorage.setItem('obq1', save['obq1'])
+  }
+  if (save['obq2'] !== undefined) {
+    localStorage.setItem('obq2', save['obq2'])
   }
 
   recarregarPagina()
