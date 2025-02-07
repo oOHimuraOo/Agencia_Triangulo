@@ -75,7 +75,7 @@ const loadInfos = () => {
       atualizarMax(save['max'])
     }
   } catch (error) {
-    console.log('Houve um erro ao carregar as informações', error)
+    console.error('Houve um erro ao carregar as informações', error)
   }
 }
 

@@ -43,7 +43,7 @@ const loadInfos = () => {
       atualizarProfile(save['url'])
     }
   } catch (error) {
-    console.log('Houve um erro ao carregar as informações', error)
+    console.error('Houve um erro ao carregar as informações', error)
   }
 }
 
@@ -64,7 +64,6 @@ const salvarInfos = () => {
 }
 
 const verificarSeNomePronome = () => {
-  console.log('nana')
   const memoria1 = localStorage.getItem('Character Name')
   const memoria2 = localStorage.getItem('Pronouns')
   if (!memoria1) {

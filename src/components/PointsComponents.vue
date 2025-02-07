@@ -1,5 +1,11 @@
 <script setup lang="ts">
 import SingleLineNumberInput from './inputs/SingleLineNumberInput.vue'
+
+const emit = defineEmits(['agencyStandingChanged'])
+
+const quandoAgencyStandingChanged = (valor: string) => {
+  emit('agencyStandingChanged', valor)
+}
 </script>
 
 <template>
@@ -9,7 +15,11 @@ import SingleLineNumberInput from './inputs/SingleLineNumberInput.vue'
         <SingleLineNumberInput nome="Commendations" :chave="'Commendations'" />
       </li>
       <li>
-        <SingleLineNumberInput nome="Demerits" :chave="'Demerits'" />
+        <SingleLineNumberInput
+          nome="Demerits"
+          :chave="'Demerits'"
+          @agency-standing-changed="quandoAgencyStandingChanged"
+        />
       </li>
       <li>
         <SingleLineNumberInput nome="Additional Burnout" :chave="'Additional Burnout'" />

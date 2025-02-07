@@ -1060,5 +1060,20 @@
       "7": "What do you bring to the table in a collaborative work environment?",
       "8": "Additional Notes"
     }
+  },
+  "Agency": {
+    "Standing": {
+      "0": "Good Standing",
+      "1": "Needs Improovement",
+      "2": "Needs Serious Improvement",
+      "3": "That Employee",
+      "4": "Alone at Lunch",
+      "5": "Target of Passive Aggression",
+      "6": "Disinvited to Parties",
+      "7": "We Had Such High Hopes For You",
+      "8": "There Is Still Time to Change",
+      "9": "Please Do Not Do This",
+      "10+": "FROZEN YOGURT ROOM ACCESS REVOKED"
+    }
   }
 }

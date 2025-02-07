@@ -84,7 +84,6 @@ watch([selectedOption], () => {
 })
 
 const selecionarOpcao = () => {
-  console.log('a')
   if (props.tipo === 'Anom') {
     emit('anomalySelected', selectedOption.value)
   } else if (props.tipo === 'Comp') {

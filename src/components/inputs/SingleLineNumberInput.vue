@@ -3,6 +3,7 @@ import { computed, onMounted, ref, watch } from 'vue'
 import commendations from '../../assets/Commendations.png'
 import demerits from '../../assets/Demerits.png'
 import additionalBurnout from '../../assets/AdditionalBurnout.png'
+import dados from '../../others/json/jsonData'
 
 interface Props {
   nome: string
@@ -10,6 +11,7 @@ interface Props {
 }
 
 const props = defineProps<Props>()
+const emit = defineEmits(['agencyStandingChanged'])
 
 const atributo = ref(0)
 
@@ -61,10 +63,12 @@ const salvarInfos = () => {
 
 onMounted(() => {
   loadInfos()
+  agencyStanding()
 })
 
 watch([atributo], () => {
   salvarInfos()
+  agencyStanding()
 })
 
 const nome = computed(() => {
@@ -80,6 +84,46 @@ const image = computed(() => {
   }
   return additionalBurnout
 })
+
+const agencyStanding = () => {
+  if (props.nome === 'Demerits') {
+    switch (atributo.value) {
+      case 0:
+        emit('agencyStandingChanged', dados.Agency.Standing[0])
+        break
+      case 1:
+        emit('agencyStandingChanged', dados.Agency.Standing[1])
+        break
+      case 2:
+        emit('agencyStandingChanged', dados.Agency.Standing[2])
+        break
+      case 3:
+        emit('agencyStandingChanged', dados.Agency.Standing[3])
+        break
+      case 4:
+        emit('agencyStandingChanged', dados.Agency.Standing[4])
+        break
+      case 5:
+        emit('agencyStandingChanged', dados.Agency.Standing[5])
+        break
+      case 6:
+        emit('agencyStandingChanged', dados.Agency.Standing[6])
+        break
+      case 7:
+        emit('agencyStandingChanged', dados.Agency.Standing[7])
+        break
+      case 8:
+        emit('agencyStandingChanged', dados.Agency.Standing[8])
+        break
+      case 9:
+        emit('agencyStandingChanged', dados.Agency.Standing[9])
+        break
+      default:
+        emit('agencyStandingChanged', dados.Agency.Standing['10+'])
+        break
+    }
+  }
+}
 </script>
 
 <template>

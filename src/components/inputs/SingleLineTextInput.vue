@@ -4,6 +4,7 @@ import { computed, onMounted, ref, watch } from 'vue'
 interface Props {
   nome: string
   chave: string
+  agencyStanding?: string
 }
 
 const props = defineProps<Props>()
@@ -79,6 +80,14 @@ const atualizarPropriedade = (value: Event) => {
     emit('CharacterPronouns', valor)
   }
 }
+
+const definirTexto = () => {
+  if (props.nome === 'Agency Standing') {
+    return props.agencyStanding
+  } else {
+    return texto.value
+  }
+}
 </script>
 
 <template>
@@ -87,7 +96,8 @@ const atualizarPropriedade = (value: Event) => {
     <input
       type="text"
       id="input_text"
-      :value="texto"
+      :value="definirTexto()"
+      :disabled="props.nome === 'Agency Standing'"
       @blur="(atualizarPropriedade($event), atualizarTexto(intemediator($event)))"
     />
   </div>

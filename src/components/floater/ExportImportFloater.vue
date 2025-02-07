@@ -290,14 +290,18 @@ const implementarNovoSave = (valor: string) => {
   position: fixed;
   bottom: 30px;
   left: 50px;
+  background-color: transparent;
 
   .export_container {
+    background-color: transparent;
     margin-right: 15px;
 
     a {
+      background-color: transparent;
       text-decoration: none;
 
       img {
+        background-color: transparent;
         height: 50px;
         width: 50px;
       }
@@ -305,10 +309,13 @@ const implementarNovoSave = (valor: string) => {
   }
 
   .import_container {
+    background-color: transparent;
     a {
+      background-color: transparent;
       text-decoration: none;
 
       img {
+        background-color: transparent;
         height: 50px;
         width: 50px;
       }

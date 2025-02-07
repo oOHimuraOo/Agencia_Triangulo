@@ -17,6 +17,7 @@ const selectedCompetency = ref('')
 const selectedReality = ref('')
 const selectedName = ref('')
 const selectedPronoun = ref('')
+const novoAgencyStandingValue = ref('')
 
 const howToUse = () => {
   if (localStorage.getItem('firstView')) {
@@ -52,6 +53,11 @@ const updateName = (newName: string) => {
 const updatePronoun = (newPronoun: string) => {
   selectedPronoun.value = newPronoun
 }
+
+const quandoNovoAgencyStanding = (valor: string) => {
+  novoAgencyStandingValue.value = valor
+  console.log('b: ', novoAgencyStandingValue.value)
+}
 </script>
 
 <template>
@@ -63,11 +69,12 @@ const updatePronoun = (newPronoun: string) => {
         @reality-selected="updateReality"
         @new-name="updateName"
         @new-pronoun="updatePronoun"
+        :novoAgencyStanding="novoAgencyStandingValue"
       />
     </div>
     <div class="halfpage">
       <div class="left_bar">
-        <points-components />
+        <points-components @agency-standing-changed="quandoNovoAgencyStanding" />
         <TriggersComponent :competency="selectedCompetency" :reality="selectedReality" />
       </div>
       <div class="right_bar">

@@ -1,7 +1,13 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
 import SelectInput from './inputs/SelectInput.vue'
 import SingleLineTextInput from './inputs/SingleLineTextInput.vue'
+
+interface Props {
+  novoAgencyStanding: string
+}
+
+const props = defineProps<Props>()
 
 const emit = defineEmits([
   'anomalySelected',
@@ -41,6 +47,10 @@ const updatePronoun = (newPronoun: string) => {
   selectedPronoun.value = newPronoun
   emit('newPronoun', newPronoun)
 }
+
+const novoAgencyStanding = computed(() => {
+  return props.novoAgencyStanding
+})
 </script>
 
 <template>
@@ -48,11 +58,25 @@ const updatePronoun = (newPronoun: string) => {
     <div class="agent_info">
       <ul>
         <li>
-          <SingleLineTextInput nome="Character Name" @character-name="updateName" chave="Character Name"/>
-          <SingleLineTextInput nome="Pronouns" @-character-pronouns="updatePronoun" chave="Pronouns"/>
+          <SingleLineTextInput
+            nome="Character Name"
+            @character-name="updateName"
+            chave="Character Name"
+          />
+          <SingleLineTextInput
+            nome="Pronouns"
+            @-character-pronouns="updatePronoun"
+            chave="Pronouns"
+          />
         </li>
-        <li><SingleLineTextInput nome="Agency Title" chave="Agency Title"/></li>
-        <li><SingleLineTextInput nome="Agency Standing" chave="Agency Standing"/></li>
+        <li><SingleLineTextInput nome="Agency Title" chave="Agency Title" /></li>
+        <li>
+          <SingleLineTextInput
+            nome="Agency Standing"
+            chave="Agency Standing"
+            :agencyStanding="novoAgencyStanding"
+          />
+        </li>
       </ul>
     </div>
     <div class="agent_caracteristic">
